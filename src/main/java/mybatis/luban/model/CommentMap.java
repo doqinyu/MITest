@@ -9,4 +9,5 @@ public class CommentMap {
     //private long userId;
     private String content;
     private UserDO user;
+    private BlogMap3 blog;
 }

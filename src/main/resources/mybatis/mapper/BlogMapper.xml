@@ -6,12 +6,41 @@
         <id property="id" column="id"/>
         <result property="title" column="title"/>
         <!-- 1:1 嵌套子查询 fetchType="eager"关闭懒加载-->
-        <association property="author" column="user_id" select="mybatis.luban.mapper.UserMapper.selectUserById"/>
+<!--        <association property="author" column="user_id" select="mybatis.luban.mapper.UserMapper.selectUserById" />-->
         <!-- 1:n 嵌套子查询-->
-        <association property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>
+        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>
+<!--        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId" fetchType="lazy"/>-->
+    </resultMap>
+
+
+    <resultMap id="BaseBlogMap2" type="mybatis.luban.model.BlogMap">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <collection property="comments"  autoMapping="true" columnPrefix="comment_" ofType="commentMap"/>
+    </resultMap>
+
+    <resultMap id="BaseBlogMap3" type="mybatis.luban.model.BlogMap3">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <collection property="comments"  autoMapping="true" columnPrefix="comment_" ofType="commentMap">
+            <association property="blog" resultMap="BaseBlogMap3" />
+        </collection>
     </resultMap>
 
     <select id="selectBlogById" resultMap="BaseBlogMap">
         select * from blog where id = #{id}
+    </select>
+
+    <select id="selectBlogById2" resultMap="BaseBlogMap2">
+        select a.id,a.title,c.id as comment_id,c.content as comment_content
+        from blog a left join comment c on a.id = c.blog_id
+        where a.id = #{id}
+    </select>
+
+
+    <select id="selectBlogById3" resultMap="BaseBlogMap3">
+        select a.id,a.title,c.id as comment_id,c.content as comment_content
+        from blog a left join comment c on a.id = c.blog_id
+        where a.id = #{id}
     </select>
 </mapper>

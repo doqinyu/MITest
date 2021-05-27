@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.luban.mapper.CommentMapper">
 
-    <resultMap id="commentMap" type="commentMap">
+    <resultMap id="commentMap" type="commentMap" >
         <id property="id" column="id"/>
         <result property="blogId" column="blog_id"/>
         <result property="content" column="content"/>

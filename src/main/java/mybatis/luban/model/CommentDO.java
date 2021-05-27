@@ -8,4 +8,7 @@ public class CommentDO {
     private long blogId;
     private long userId;
     private String content;
+    private UserDO user;
+
+
 }
