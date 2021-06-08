@@ -2,7 +2,10 @@ package mybatis.luban.Test;
 
 import mybatis.luban.model.BlogDO;
 import org.apache.ibatis.reflection.MetaObject;
+import org.apache.ibatis.reflection.property.PropertyTokenizer;
+import org.apache.ibatis.reflection.wrapper.BeanWrapper;
 import org.apache.ibatis.session.Configuration;
+import sun.security.krb5.Config;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -53,7 +56,9 @@ public class MetaObjectTest {
         Object obj = Mock.mockBlogDO();
         Configuration configuration = new Configuration() ;
         MetaObject metaObject = configuration.newMetaObject(obj);
-        Object value = metaObject.getValue("comments[0].content");
+        //Object value = metaObject.getValue("comments[0].content");
+        //System.out.println(value);
+        Object value = metaObject.getValue("comments[0].user.name");
         System.out.println(value);
     }
 
@@ -74,6 +79,19 @@ public class MetaObjectTest {
     }
 
 
+    public void testBeanWrapper() {
+        Object obj = Mock.mockBlogDO();
+        Configuration configuration = new Configuration();
+        //MetaObject装饰
+        MetaObject metaObject = configuration.newMetaObject(obj);
+        metaObject.getValue("comments[0].user.name");
+
+        BeanWrapper beanWrapper = new BeanWrapper(metaObject, obj);
+        beanWrapper.get(new PropertyTokenizer("comments[0]"));
+        beanWrapper.get(new PropertyTokenizer("comments"));
+    }
+
+
     public static void main(String[] args) throws Exception {
         MetaObjectTest metaObjectTest = new MetaObjectTest();
         //metaObjectTest.test();
@@ -81,5 +99,6 @@ public class MetaObjectTest {
         //metaObjectTest.testHumpNaming();
         metaObjectTest.testArray();
         //metaObjectTest.testMap();
+        //metaObjectTest.testBeanWrapper();
     }
 }

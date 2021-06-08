@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.luban.mapper.BlogMapper">
+    <resultMap id="myUserMap" type = "mybatis.luban.model.UserDO">
+        <id property="id" column="id"/>
+        <result property="name" column="title"/>
+    </resultMap>
 
     <resultMap id="BaseBlogMap" type="mybatis.luban.model.BlogMap">
         <id property="id" column="id"/>
         <result property="title" column="title"/>
+<!-- 复合映射 -->
+<!--        <association property="author" >-->
+<!--            <id property="id" column="id"/>-->
+<!--            <result property="name" column="title"/>-->
+<!--        </association>-->
+
+<!-- 外部映射，resultMap与select不能同时存在。如果存在resultMap，则复合映射失效 -->
+<!--        <association property="author" resultMap="myUserMap">-->
+<!--        </association>-->
+
         <!-- 1:1 嵌套子查询 fetchType="eager"关闭懒加载-->
 <!--        <association property="author" column="user_id" select="mybatis.luban.mapper.UserMapper.selectUserById" />-->
         <!-- 1:n 嵌套子查询-->
