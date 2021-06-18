@@ -5,5 +5,5 @@ import mybatis.luban.model.CommentDO;
 import java.util.List;
 
 public interface CommentMapper {
-    List<CommentDO> selectCommentsByBlogId(long blogId);
+    List<CommentDO> selectCommentsByBlogId(int blogId);
 }

@@ -3,7 +3,7 @@
 <mapper namespace="mybatis.luban.mapper.UserMapper">
 
     <!-- 开启二级缓存 -->
-    <cache></cache>
+<!--    <cache></cache>-->
 
     <insert id="addUser">
         insert into user (name, age) values (#{name},#{age})

@@ -22,6 +22,8 @@
         <!-- 1:1 嵌套子查询 fetchType="eager"关闭懒加载-->
 <!--        <association property="author" column="user_id" select="mybatis.luban.mapper.UserMapper.selectUserById" />-->
         <!-- 1:n 嵌套子查询-->
+        <!-- column 也可以为子查询传递多个参数-->
+<!--        <collection property="comments" column="commentId = comment_id, blogId = blog_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>-->
         <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>
 <!--        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId" fetchType="lazy"/>-->
     </resultMap>
@@ -41,6 +43,13 @@
         </collection>
     </resultMap>
 
+    <resultMap id="BaseBlogMap4" type="mybatis.luban.model.BlogMap">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+<!--        <association property="author" column="user_id" select="mybatis.luban.mapper.UserMapper.selectUserById"/>-->
+        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId" fetchType="eager"/>
+    </resultMap>
+
     <select id="selectBlogById" resultMap="BaseBlogMap">
         select * from blog where id = #{id}
     </select>
@@ -56,5 +65,9 @@
         select a.id,a.title,c.id as comment_id,c.content as comment_content
         from blog a left join comment c on a.id = c.blog_id
         where a.id = #{id}
+    </select>
+
+    <select id="selectBlogById4" resultMap="BaseBlogMap4">
+        select * from blog where id = #{id}
     </select>
 </mapper>

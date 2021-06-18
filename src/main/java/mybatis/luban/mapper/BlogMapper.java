@@ -10,4 +10,7 @@ public interface BlogMapper {
     BlogMap selectBlogById2(long id);
 
     BlogMap3 selectBlogById3(long id);
+
+    //循环依赖
+    BlogMap selectBlogById4(long id);
 }
