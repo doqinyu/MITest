@@ -22,6 +22,7 @@ public class NestedQueryTest {
         blogMapper = sqlSession.getMapper(BlogMapper.class);
     }
 
+    //嵌套查询
     public void test() {
         BlogMap blogDO = blogMapper.selectBlogById(1);
         System.out.println();

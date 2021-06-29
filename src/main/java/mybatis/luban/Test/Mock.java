@@ -18,8 +18,8 @@ public class Mock {
     public static CommentDO mockCommentDO() {
         CommentDO commentDO = new CommentDO();
         //commentDO.setBlogId(1);
-        commentDO.setContent("mock comment");
-        commentDO.setUser(mockUserDO());
+//        commentDO.setContent("mock comment");
+//        commentDO.setUser(mockUserDO());
         return commentDO;
     }
 
@@ -27,13 +27,13 @@ public class Mock {
         ArrayList list = new ArrayList<String>();
         CommentDO commentDO = new CommentDO();
         //commentDO.setBlogId(1);
-        commentDO.setContent("mock comment");
-        commentDO.setUser(mockUserDO());
+//        commentDO.setContent("mock comment");
+//        commentDO.setUser(mockUserDO());
         list.add(commentDO);
         commentDO = new CommentDO();
         //commentDO.setBlogId(1);
-        commentDO.setContent("mock comment222");
-        commentDO.setUser(mockUserDO());
+//        commentDO.setContent("mock comment222");
+//        commentDO.setUser(mockUserDO());
         list.add(commentDO);
         return list;
     }

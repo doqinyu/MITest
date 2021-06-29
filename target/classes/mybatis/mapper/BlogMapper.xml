@@ -24,8 +24,8 @@
         <!-- 1:n 嵌套子查询-->
         <!-- column 也可以为子查询传递多个参数-->
 <!--        <collection property="comments" column="commentId = comment_id, blogId = blog_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>-->
-        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>
-<!--        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId" fetchType="lazy"/>-->
+<!--        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>-->
+        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId" fetchType="eager"/>
     </resultMap>
 
 

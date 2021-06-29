@@ -90,9 +90,9 @@ public class Test {
         //        获取Calendar对象，用于自定时时间
         Calendar c = Calendar.getInstance();
 //        绑定当前时间的年月日，年就是本年，月是本月，日是下一日（如果是-1的话，就是昨天喽）
-        c.add(Calendar.YEAR,0);
-        c.add(Calendar.MONTH,0);
-        c.add(Calendar.DAY_OF_MONTH,0);
+        //c.add(Calendar.YEAR,0);
+        //c.add(Calendar.MONTH,0);
+        //c.add(Calendar.DAY_OF_MONTH,0);
 //        设置当前时间的时分秒，时就是凌晨4点，分是0分，秒是0秒
         c.set(Calendar.HOUR_OF_DAY,3); //HOUR_OF_DAY是24小时制，HOUR是12小时制
         c.set(Calendar.MINUTE,0);
@@ -121,6 +121,21 @@ public class Test {
         System.out.println();
     }
 
+    public void test8() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date todayZero = calendar.getTime();
+
+        Calendar leftNow = Calendar.getInstance();
+        leftNow.setTime(todayZero);
+        leftNow.add(Calendar.DAY_OF_MONTH, -1);
+        Date yesterydayNow = leftNow.getTime();
+        System.out.println();
+    }
+
 
     public static void main(String[] args) {
         Test test = new Test();
@@ -132,8 +147,10 @@ public class Test {
         //test.test4();
         //test.test5();
         //test.test6();
-        Map<Integer, Integer> map = new HashMap<>();
-        boolean empty = map.isEmpty();
-        System.out.println();
+//        Map<Integer, Integer> map = new HashMap<>();
+//        boolean empty = map.isEmpty();
+//        System.out.println();
+
+        test.test8();
     }
 }

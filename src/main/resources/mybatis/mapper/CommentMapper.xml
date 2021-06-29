@@ -6,14 +6,16 @@
         <id property="id" column="id"/>
         <result property="blogId" column="blog_id"/>
         <result property="content" column="content"/>
-        <association property="user" column="user_id" select="mybatis.luban.mapper.UserMapper.selectUserById"/>
+<!--        <association property="user" column="user_id" select="mybatis.luban.mapper.UserMapper.selectUserById"/>-->
     </resultMap>
 
     <resultMap id="commentMap" type="mybatis.luban.model.CommentDO" >
         <association property="blog" column="blog_id" select="mybatis.luban.mapper.BlogMapper.selectBlogById4" fetchType="eager"/>
     </resultMap>
 
-    <select id="selectCommentsByBlogId" resultMap="commentMap">
+
+    <select id="selectCommentsByBlogId" resultMap="baseCommentMap">
+<!--    <select id="selectCommentsByBlogId" resultMap="commentMap">-->
         select * from comment where blog_id = #{blogId}
     </select>
 </mapper>
