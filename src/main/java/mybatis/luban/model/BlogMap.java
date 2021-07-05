@@ -13,6 +13,6 @@ public class BlogMap implements Serializable {
     //private long commentId;
     private List<CommentDO> comments;
     //private String comment;
-    //private UserDO author;
+    private UserDO author;
 
 }

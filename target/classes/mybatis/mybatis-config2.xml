@@ -18,6 +18,7 @@
         <setting name="aggressiveLazyLoading" value="false"/>
         <!-- 配置configurationFactory,用于序列化与反序列化（java原生的序列化与反序列化）时仍然能够触发懒加载操作。由于ConfigurationFactory是静态内部类，所以全路径的最后一个符号是$，而不是. -->
         <setting name="configurationFactory" value="mybatis.luban.Test.LazyTest$ConfigurationFactory"/>
+        <setting name="lazyLoadTriggerMethods" value=""/>
         <!-- 开启二级缓存 -->
 <!--        <setting name="cacheEnabled" value="true"/>-->
         

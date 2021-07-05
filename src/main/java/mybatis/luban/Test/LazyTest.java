@@ -56,7 +56,8 @@ public class LazyTest {
     public void resetTest() {
         //BlogMap blogDO = blogMapper.selectBlogById(1);
         BlogMap blogDO = sqlSession.selectOne("selectBlogById", 1);
-        blogDO.getComments();
+        //blogDO.getComments();
+        blogDO.getAuthor();
         //blogDO.setComments(new ArrayList<CommentDO>()); //set后，移除懒加载属性
         System.out.println("重新设值后的评论数为：" + blogDO.getComments().size());
     }
@@ -130,8 +131,8 @@ public class LazyTest {
 
     public static void main(String[] args) throws Exception {
         LazyTest lazyTest = new LazyTest();
-        //lazyTest.resetTest();
+        lazyTest.resetTest();
         //lazyTest.lazySerializableTest();
-        lazyTest.serializableTest();
+        //lazyTest.serializableTest();
     }
 }

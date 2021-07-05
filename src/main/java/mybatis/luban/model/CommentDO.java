@@ -6,9 +6,9 @@ import lombok.Data;
 public class CommentDO {
     private long id;
     //private long blogId;
-    private BlogMap blog;
+    //private BlogMap blog;
     //private long userId;
-    //private String content;
+    private String content;
     //private UserDO user;
 
 }

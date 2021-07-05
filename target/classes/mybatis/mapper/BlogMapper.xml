@@ -25,7 +25,7 @@
         <!-- column 也可以为子查询传递多个参数-->
 <!--        <collection property="comments" column="commentId = comment_id, blogId = blog_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>-->
 <!--        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId"/>-->
-        <collection property="comments" column="comment_id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId" fetchType="eager"/>
+<!--        <collection property="comments" column="id" select="mybatis.luban.mapper.CommentMapper.selectCommentsByBlogId" fetchType="eager"/>-->
     </resultMap>
 
 
@@ -39,7 +39,7 @@
         <id property="id" column="id"/>
         <result property="title" column="title"/>
         <collection property="comments"  autoMapping="true" columnPrefix="comment_" ofType="commentMap">
-            <association property="blog" resultMap="BaseBlogMap3" />
+<!--            <association property="blog" resultMap="BaseBlogMap3" />-->
         </collection>
     </resultMap>
 
