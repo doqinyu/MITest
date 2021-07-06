@@ -14,8 +14,8 @@
     </resultMap>
 
 
-<!--    <select id="selectCommentsByBlogId" resultType="commentMap">-->
-    <select id="selectCommentsByBlogId" resultMap="baseCommentMap">
+    <select id="selectCommentsByBlogId" resultMap="commentMap">
+<!--    <select id="selectCommentsByBlogId" resultMap="baseCommentMap">-->
         select * from comment where blog_id = #{blogId}
     </select>
 

@@ -48,9 +48,9 @@ public class JoinTest {
 
     public static void main(String[] args) throws Exception {
         JoinTest joinTest = new JoinTest();
-        joinTest.test();
+        //joinTest.test();
         //joinTest.test2();
-        //joinTest.test3();
+        joinTest.test3();
         System.out.println();
 
     }
