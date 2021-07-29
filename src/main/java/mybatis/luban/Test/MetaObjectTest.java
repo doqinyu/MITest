@@ -84,7 +84,8 @@ public class MetaObjectTest {
         Configuration configuration = new Configuration();
         //MetaObject装饰
         MetaObject metaObject = configuration.newMetaObject(obj);
-        metaObject.getValue("comments[0].user.name");
+        //metaObject.getValue("comments[0].user.name");
+        //metaObject.getValue("comments[0].content");
 
         BeanWrapper beanWrapper = new BeanWrapper(metaObject, obj);
         beanWrapper.get(new PropertyTokenizer("comments[0]"));
@@ -95,9 +96,9 @@ public class MetaObjectTest {
     public static void main(String[] args) throws Exception {
         MetaObjectTest metaObjectTest = new MetaObjectTest();
         //metaObjectTest.test();
-        //metaObjectTest.testMultiProperties();
+        metaObjectTest.testMultiProperties();
         //metaObjectTest.testHumpNaming();
-        metaObjectTest.testArray();
+        //metaObjectTest.testArray();
         //metaObjectTest.testMap();
         //metaObjectTest.testBeanWrapper();
     }

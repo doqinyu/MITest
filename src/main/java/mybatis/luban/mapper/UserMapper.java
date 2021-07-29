@@ -1,7 +1,9 @@
 package mybatis.luban.mapper;
 
 import mybatis.luban.model.UserDO;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.mapping.StatementType;
 
 import java.util.List;
 

@@ -57,8 +57,8 @@ public class LazyTest {
         //BlogMap blogDO = blogMapper.selectBlogById(1);
         BlogMap blogDO = sqlSession.selectOne("selectBlogById", 1);
         //blogDO.getComments();
-        blogDO.getAuthor();
-        //blogDO.setComments(new ArrayList<CommentDO>()); //set后，移除懒加载属性
+        //blogDO.getAuthor();
+        blogDO.setComments(new ArrayList<CommentDO>()); //set后，移除懒加载属性
         System.out.println("重新设值后的评论数为：" + blogDO.getComments().size());
     }
 
@@ -70,7 +70,7 @@ public class LazyTest {
         byte[] bytes = writeObject(blogDO);
         BlogMap blogDO2 = (BlogMap) readObject(bytes);
         System.out.println("反序列化完成");
-        //System.out.println("重反序列化后的评论数为：" + blogDO2.getComments().size());
+        System.out.println("重反序列化后的评论数为：" + blogDO2.getComments().size());
     }
 
     public byte[] writeObject(Object obj) throws Exception {
@@ -96,8 +96,9 @@ public class LazyTest {
     }
 
 
-    //序列化与反序列化时需要指定ConfigurationFactory
+    //如果想在(Java原生)序列化与(Java原生)反序列化后仍然可以触发懒加载，则需要指定ConfigurationFactory
     //重点在于 方法名getConfiguration和 返回结果Configuration
+    //如果使用第三方的序列化，则反序列化后的对象失去懒加载属性
     public static class ConfigurationFactory {
         public static Configuration getConfiguration() {
             return configuration;
@@ -131,8 +132,8 @@ public class LazyTest {
 
     public static void main(String[] args) throws Exception {
         LazyTest lazyTest = new LazyTest();
-        lazyTest.resetTest();
-        //lazyTest.lazySerializableTest();
+        //lazyTest.resetTest();
+        lazyTest.lazySerializableTest();
         //lazyTest.serializableTest();
     }
 }

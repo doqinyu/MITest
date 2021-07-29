@@ -2,8 +2,10 @@ package mybatis.luban.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class CommentMap {
+public class CommentMap implements Serializable {
     private long id;
     private long blogId;
     //private long userId;

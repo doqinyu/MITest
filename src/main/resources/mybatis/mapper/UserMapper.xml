@@ -18,6 +18,7 @@
     </delete>
 
     <select id="selectUserById" resultType="mybatis.luban.model.UserDO">
+<!--        <select id="selectUserById" resultType="mybatis.luban.model.UserDO" statementType="STATEMENT">-->
 <!--    <select id="selectUserById" resultType="mybatis.luban.model.UserDO" flushCache="true">-->
         select * from User where id = #{id}
     </select>
