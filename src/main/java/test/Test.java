@@ -136,6 +136,19 @@ public class Test {
         System.out.println();
     }
 
+    public static void test9() {
+        String s = "\"1000002\",\"Kabul\",\"Kabul,Kabul,Afghanistan\",\"9075393\",\"AF\",\"City\",Active";
+        String[] split = s.split("\"");
+
+        StringTokenizer token=new StringTokenizer(s,"\"");
+        while(token.hasMoreElements()){
+            System.out.print(token.nextToken()+"  ");
+        }
+
+        System.out.println();
+
+    }
+
 
     public static void main(String[] args) {
         Test test = new Test();
@@ -151,6 +164,7 @@ public class Test {
 //        boolean empty = map.isEmpty();
 //        System.out.println();
 
-        test.test8();
+        //test.test8();
+        test9();
     }
 }
