@@ -1,7 +1,5 @@
 package test;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -152,21 +150,26 @@ public class Test {
 
     }
 
+    public static void test10 () {
+        int a = 6;
+        int b = 7;
+        int c = 6 & 7;
+        System.out.println();
+    }
+
+    public void test11(List<String> gifDTOS) {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+         gifDTOS.addAll(0, list);
+    }
+
     public static void main(String[] args) {
         Test test = new Test();
-        //test.test();
-        //List<String> list = Arrays.asList("wx");
-        //System.out.println(list.size());
-        //test.test2();
-        //test.test3();
-        //test.test4();
-        //test.test5();
-        //test.test6();
-//        Map<Integer, Integer> map = new HashMap<>();
-//        boolean empty = map.isEmpty();
-//        System.out.println();
-
-        //test.test8();
-        test9();
+        List<String> gifDTOS = new ArrayList<>();
+        gifDTOS.add("wx");
+        test.test11(gifDTOS);
+        System.out.println();
     }
 }
