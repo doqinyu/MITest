@@ -1,11 +1,18 @@
 package test;
 
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Test {
+
+    private static String DATE_10_30 = "2021-09-22";//2021-10-30 00:00:00
+    private static String DATE_10_31 = "2021-09-23";//2021-10-31 00:00:00
+    private static String DATE_11_01 = "2021-09-24";//2021-11-01 00:00:00
+
+
     public void test() {
         List<UserMedalDO> list = new ArrayList<UserMedalDO>();
         list.add(new UserMedalDO(1,1));
@@ -157,19 +164,17 @@ public class Test {
         System.out.println();
     }
 
-    public void test11(List<String> gifDTOS) {
-        List<String> list = new ArrayList<>();
-        list.add("1");
-        list.add("2");
-        list.add("3");
-         gifDTOS.addAll(0, list);
+
+    public void test12() throws ParseException {
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    Date now = new Date();
+        String format = sdf.format(now);
+        System.out.println();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Test test = new Test();
-        List<String> gifDTOS = new ArrayList<>();
-        gifDTOS.add("wx");
-        test.test11(gifDTOS);
+        test.test12();
         System.out.println();
     }
 }
