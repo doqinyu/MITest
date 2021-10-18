@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.nio.ByteBuffer;
 
 /**
  * 优点：模型简单，编码简单
@@ -14,6 +15,7 @@ import java.net.Socket;
  * 改进：伪NIO，使用线程池处理请求
  */
 public class BIOClient {
+
     private static final String HOST = "127.0.0.1";
     private static final int PORT = 8080;
 
