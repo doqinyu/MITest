@@ -37,8 +37,7 @@ public class MainReactor implements Runnable {
                 while (iterator.hasNext()) {
                     //mainReactor只关联Acceptor，处理连接事件
                     SelectionKey selectionKey = iterator.next();
-                    Runnable acceptor = (Runnable) selectionKey.attachment();
-                    acceptor.run();
+                    dispatch(selectionKey);
                     iterator.remove();
                 }
 
@@ -46,6 +45,13 @@ public class MainReactor implements Runnable {
 
             }
 
+        }
+    }
+
+    public void dispatch(SelectionKey key) {
+        Runnable runnable = (Runnable) key.attachment();
+        if (null != runnable) {
+            runnable.run();
         }
     }
 

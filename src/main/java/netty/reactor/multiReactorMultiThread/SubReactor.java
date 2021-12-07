@@ -41,6 +41,7 @@ public class SubReactor implements Runnable {
     }
 
     public void dispatch(SelectionKey key) {
+        //SubReactor只关联Handler,处理读写事件
         Runnable runnable = (Runnable) key.attachment();
         if (null != runnable) {
             runnable.run();
