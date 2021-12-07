@@ -9,7 +9,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Handler implements Runnable{
+public class Handler implements Runnable {
     final int subReactorIndex;
     final Selector selector;
     final SelectionKey selectionKey;
@@ -82,7 +82,7 @@ public class Handler implements Runnable{
     private void realWrite() {
 
         try {
-            String msg = "subReacor["+ subReactorIndex+ "] server replay: " + atomicInteger.incrementAndGet();
+            String msg = "subReacor[" + subReactorIndex + "] server replay: " + atomicInteger.incrementAndGet();
             writeByteBuffer.put(msg.getBytes(StandardCharsets.UTF_8));
             writeByteBuffer.flip();
             socketChannel.write(writeByteBuffer);
@@ -97,7 +97,7 @@ public class Handler implements Runnable{
     public void processBusiness() {
         try {
             Thread.sleep(1000);
-            System.out.println("subReacor["+ subReactorIndex+ "] processBusiness");
+            System.out.println("subReacor[" + subReactorIndex + "] processBusiness");
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -28,7 +28,7 @@ public class Acceptor implements Runnable {
         this.selector = selector;
         this.serverSocketChannel = serverSocketChannel;
 
-        for (int i=0; i< subReactorList.length; i++) {
+        for (int i = 0; i < subReactorList.length; i++) {
             selectors[i] = Selector.open();
             subReactorList[i] = new SubReactor(selectors[i], i);
             threads[i] = new Thread(subReactorList[i]);
@@ -39,34 +39,37 @@ public class Acceptor implements Runnable {
 
     @Override
     public void run() {
-            try {
-                //处理连接事件
-                SocketChannel socketChannel = serverSocketChannel.accept();
-                if (null != socketChannel) {
-                    //选择一个 SubReactor 处理该连接事件
-                    socketChannel.configureBlocking(false);
-                    subReactorList[nextSubReactorIndex].registering(true);
-                    /**
-                     * 注意一个selector在select时是无法注册新事件的，因此这里要先暂停select方法触发的程序段
-                     */
+        try {
+            //处理连接事件
+            SocketChannel socketChannel = serverSocketChannel.accept();
+            if (null != socketChannel) {
+                //选择一个 SubReactor 处理该连接事件
+                socketChannel.configureBlocking(false);
+                /**
+                 * 注意一个selector在select时是无法注册新事件的，因此这里要先暂停select方法触发的程序段
+                 */
+                subReactorList[nextSubReactorIndex].setStop(true);
 
-                    //使一个阻塞住的selector操作立即返回
-                    selectors[nextSubReactorIndex].wakeup();
-                    //当前客户端通道向selectors[nextSubReactorIndex]注册一个读事件，返回key
-                    SelectionKey selectionKey = socketChannel.register(selectors[nextSubReactorIndex], SelectionKey.OP_READ);
-                    selectors[nextSubReactorIndex].wakeup();
-                    subReactorList[nextSubReactorIndex].registering(false);
+                //使一个阻塞住的selector操作立即返回
+                selectors[nextSubReactorIndex].wakeup();
 
-                    selectionKey.attach(new Handler(selectors[nextSubReactorIndex], selectionKey, socketChannel, nextSubReactorIndex));
+                //当前客户端通道向selectors[nextSubReactorIndex]注册一个读事件，返回key
+                SelectionKey selectionKey = socketChannel.register(selectors[nextSubReactorIndex], SelectionKey.OP_READ);
 
-                    //越界后重新分配
-                    if (++nextSubReactorIndex == workCount) {
-                        nextSubReactorIndex = 0;
-                    }
+                selectors[nextSubReactorIndex].wakeup();
+                //重新启动selector
+                subReactorList[nextSubReactorIndex].setStop(false);
+
+                selectionKey.attach(new Handler(selectors[nextSubReactorIndex], selectionKey, socketChannel, nextSubReactorIndex));
+
+                //越界后重新分配
+                if (++nextSubReactorIndex == workCount) {
+                    nextSubReactorIndex = 0;
                 }
-
-            } catch (Exception e) {
-
             }
+
+        } catch (Exception e) {
+
+        }
     }
 }

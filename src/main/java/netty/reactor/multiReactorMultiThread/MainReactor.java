@@ -8,11 +8,11 @@ import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.util.Iterator;
 
-public class MainReactor implements Runnable{
+public class MainReactor implements Runnable {
     final Selector selector;
     final ServerSocketChannel serverSocketChannel;
     final SelectionKey selectionKey;
-     final int PORT;
+    final int PORT;
 
 
     public MainReactor(Selector selector, ServerSocketChannel serverSocketChannel, int port) throws IOException {
@@ -37,7 +37,7 @@ public class MainReactor implements Runnable{
                 while (iterator.hasNext()) {
                     //mainReactor只关联Acceptor，处理连接事件
                     SelectionKey selectionKey = iterator.next();
-                    Runnable acceptor = (Runnable)selectionKey.attachment();
+                    Runnable acceptor = (Runnable) selectionKey.attachment();
                     acceptor.run();
                     iterator.remove();
                 }

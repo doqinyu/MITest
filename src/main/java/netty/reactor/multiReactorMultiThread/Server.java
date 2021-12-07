@@ -10,7 +10,7 @@ public class Server {
     public static void main(String[] args) throws IOException {
         Selector selector = Selector.open();
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-        MainReactor mainReactor = new MainReactor(selector, serverSocketChannel,PORT);
+        MainReactor mainReactor = new MainReactor(selector, serverSocketChannel, PORT);
         mainReactor.run();
     }
 }

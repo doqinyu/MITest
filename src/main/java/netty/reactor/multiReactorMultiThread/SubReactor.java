@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class SubReactor implements Runnable {
     private final int index;
     private final Selector selector;
-    private boolean register = false;
+    private boolean stop = false;//selector 是否暂停标识
 
     public SubReactor(Selector selector, int index) throws IOException {
         //每一个SubReactor 一个Selector
@@ -19,7 +19,7 @@ public class SubReactor implements Runnable {
     public void run() {
         while (!Thread.interrupted()) {
             System.out.println(index + " 号SubReactor等待注册中...");
-            while (!Thread.interrupted() && !register) {
+            while (!Thread.interrupted() && !stop) {
 
                 try {
                     selector.select();
@@ -41,15 +41,15 @@ public class SubReactor implements Runnable {
     }
 
     public void dispatch(SelectionKey key) {
-        Runnable runnable = (Runnable)key.attachment();
+        Runnable runnable = (Runnable) key.attachment();
         if (null != runnable) {
             runnable.run();
         }
     }
 
-    public void registering(boolean register) {
-        this.register = register;
-        System.out.println("subReactor["+ index + "] register = " + register);
+    public void setStop(boolean stop) {
+        this.stop = stop;
+        System.out.println("subReactor[" + index + "] stop = " + stop);
     }
 
 }
