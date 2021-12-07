@@ -1,9 +1,18 @@
 package test;
 
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import org.apache.commons.lang3.StringUtils;
+import utils.ListUtils;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class Test {
@@ -11,6 +20,8 @@ public class Test {
     private static String DATE_10_30 = "2021-09-22";//2021-10-30 00:00:00
     private static String DATE_10_31 = "2021-09-23";//2021-10-31 00:00:00
     private static String DATE_11_01 = "2021-09-24";//2021-11-01 00:00:00
+    private static String h5PagePrefix = "panipuri://com.funnypuri.client/app/web?url=";
+    private static String zpointPage ="http://sandbox-h5.zilivideo.com/h5/zPoints/result";
     /**
      * top 用户的截取阈值
      */
@@ -189,19 +200,12 @@ public class Test {
         System.out.println();
     }
 
-    public static void main(String[] args) throws ParseException {
-        Test test = new Test();
-        //test.test12();
-        //test.test13();
-//        long rocketTeamExposureCount = 10L;
-//        long sutliBombTeamExposureCount = 3L;
-//        int rate = (int) ((rocketTeamExposureCount / sutliBombTeamExposureCount) * 10000);
-//        System.out.println();
-
+    public void test14() {
         Queue<TaskUserVideoDTO> topUserList = new PriorityQueue<>(THRESHOLD_TOP);
         topUserList.add(new TaskUserVideoDTO("wx", 900));
         topUserList.add(new TaskUserVideoDTO("mc", 1000));
 
+        //if (topUserList.peek())
         //加一个，移除最小值
         topUserList.add(new TaskUserVideoDTO("zjf", 800));
         topUserList.remove();
@@ -220,9 +224,209 @@ public class Test {
         while (iterator.hasNext()) {
             topList.add(iterator.next().getUserId());
         }
+    }
 
+    public static void test15() {
+        List<UserRankingDetailVO> userList = new ArrayList<>();
+
+        userList.stream().collect(Collectors.toMap(UserRankingDetailVO::getUserId, UserRankingDetailVO -> UserRankingDetailVO));
+
+        List<Long> filterIdList = new ArrayList<>();
+
+
+        filterIdList.add(256L);
+        UserRankingDetailVO userRankingDetailVO = new UserRankingDetailVO();
+        userRankingDetailVO.setUserId("wx");
+        userRankingDetailVO.setRanking(26L);
+        userList.add(userRankingDetailVO);
+
+        userRankingDetailVO = new UserRankingDetailVO();
+        userRankingDetailVO.setUserId("hy");
+        userRankingDetailVO.setRanking(256L);
+        userList.add(userRankingDetailVO);
+
+
+        //Map<String, UserRankingDetailVO> collect = userList.stream().collect(Collectors.toMap(UserRankingDetailVO::getUserId, UserRankingDetailVO -> UserRankingDetailVO, (key1, key2) -> key2));
+        //ArrayList<UserRankingDetailVO> userRankingDetailVOS = new ArrayList<>(collect.values());
+
+//        for (UserRankingDetailVO userRankingDetailVO1: userList) {
+//            if (filterIdList.contains(userRankingDetailVO1.getRanking())) {
+//                userList.remove(userRankingDetailVO1);
+//            }
+//        }
+
+        userList = userList.stream().filter(t -> !filterIdList.contains(t.getRanking())).collect(Collectors.toList());
+        Set<String> userIdSet = ListUtils.getColumnToSet(userList, "userId");
+
+        ArrayList<String> strings = new ArrayList<>(userIdSet);
 
         System.out.println();
     }
+
+    public void test16(String s1) {
+        s1 = "cd";
+        System.out.println("s1 = " + s1);
+    }
+
+    public static void urlEncoder() throws UnsupportedEncodingException {
+        int category = 39;
+        int count = 1;
+        String h1 = "http://sandbox-h5.zilivideo.com/h5/zPoints/result?category=%s&count=%s";
+        String format = String.format(h1, category, count);
+        String encode = URLEncoder.encode(format, "UTF-8");
+        System.out.println(encode);
+    }
+
+    public static void test18() {
+        //标签方法
+        retry:
+        System.out.println("retry");
+//        for(int i =0 ;i < 10; i++) {
+//            System.out.println("retry foreach : " + i);
+//            if (i==5) {
+//                System.out.println(" i == 5, continue");
+//                continue retry;
+//            }
+//
+//            if (i>=5) {
+//                break retry;
+//            }
+//        }
+        System.out.println("retry end");
+    }
+
+    /**
+     * executorService 出现RejectedExecutionException时，会抛出异常，
+     * 1。在任务提交的外面捕获异常，就可以结束countDownLatch.await();避免主线城阻塞
+     * 2。executorService抛出RejectedExecutionException异常后，仍可以再次添加任务，执行任务，直至再次抛出异常
+     *
+     * @throws InterruptedException
+     */
+    public static void test17() throws InterruptedException {
+        ExecutorService executorService = new ThreadPoolExecutor(1, 2, 1, TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(3, true),
+                new ThreadFactoryBuilder().setNameFormat("pointsVideoQueryThread-%d").build(),
+                new ThreadPoolExecutor.AbortPolicy());
+
+        //AtomicInteger count = new AtomicInteger();
+        final CountDownLatch countDownLatch = new CountDownLatch(200);
+        try {
+            for (int i = 0; i < 500; i++) {
+                executorService.submit(() -> {
+                    //count.getAndIncrement();
+                    //System.out.println("sumbit task 【" + count.get() + "】");
+                    try {
+                        System.out.println("task ：" + countDownLatch.getCount());
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    } finally {
+                        countDownLatch.countDown();
+                    }
+
+                });
+            }
+
+            countDownLatch.await();
+            System.out.println("========================== for  end ==========================");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        //executorService.shutdown();
+        System.out.println("############################## function end 1 ##############################");
+        try {
+            for (int i = 0; i < 500; i++) {
+                executorService.submit(() -> {
+                    //count.getAndIncrement();
+                    //System.out.println("sumbit task 【" + count.get() + "】");
+                    try {
+                        System.out.println("task2 ：" + countDownLatch.getCount());
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    } finally {
+                        countDownLatch.countDown();
+                    }
+
+                });
+            }
+
+            countDownLatch.await();
+            System.out.println("========================== for  end2 ==========================");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        System.out.println("############################## function end 2 ##############################");
+
+
+        try {
+            for (int i = 0; i < 500; i++) {
+                executorService.submit(() -> {
+                    //count.getAndIncrement();
+                    //System.out.println("sumbit task 【" + count.get() + "】");
+                    try {
+                        System.out.println("task3 ：" + countDownLatch.getCount());
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    } finally {
+                        countDownLatch.countDown();
+                    }
+
+                });
+            }
+
+            countDownLatch.await();
+            System.out.println("========================== for  end3 ==========================");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        System.out.println("############################## function end 3 ##############################");
+    }
+
+
+    public static void main(String[] args) throws ParseException, UnsupportedEncodingException, InterruptedException {
+        Test test = new Test();
+
+//        String userId = null;
+//        if (StringUtils.isBlank(userId) ) {
+//            System.out.println("true");
+//        } else {
+//            System.out.println("false");
+//        }
+
+        //test15();
+        //String s = "2020-11-08";
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        //Date birthday = simpleDateFormat.parse(s);
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(birthday);
+//        calendar.add(Calendar.YEAR, 18);
+//        Date yonger = calendar.getTime();
+        //test.test16(s);
+        //System.out.println("s = "+ s);
+
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(new Date());
+//        calendar.add(Calendar.DAY_OF_MONTH, -1);
+//        String yesterday= simpleDateFormat.format(calendar.getTime());
+//        System.out.println();
+//        String url = "panipuri://com.funnypuri.client/app/web?url=http%3A%2F%2Fsandbox-h5.zilivideo.com%2Fh5%2FzPoints%2Fresult%3Fcategory%3D39%26count%3D%25s";
+//        int count = 1;
+//        String format = String.format(url, count);
+//        System.out.println();
+
+        //urlEncoder();
+        //test17();
+        //test18();
+        String url = h5PagePrefix + URLEncoder.encode(zpointPage + String.format("?category=%s&count=%s", 39, 5), "UTF-8");
+        String b = "-303033600000";
+        //boolean numeric = StringUtils.isNumeric(b);
+        Long aLong = Long.valueOf(b);
+
+
+        System.out.println("main end");
+    }
+
 
 }

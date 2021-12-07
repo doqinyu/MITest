@@ -20,16 +20,24 @@ public class GenSign {
 
     private static void genParam() {
         TreeMap<String, String> treeMap = new TreeMap<>();
-        treeMap.put("version_code", "20210325");
-        treeMap.put("server_code", "100");
-        treeMap.put("r", "IN");
-        treeMap.put("position", "0");
+        treeMap.put("uId", "e53d1da20d27db19");
+        treeMap.put("page", "0");
+        treeMap.put("size", "10");
 
 
+        treeMap.put("version_code", "100");
+        treeMap.put("server_code", "1");
+        //treeMap.put("r", "IN");
         treeMap.put("passport", "boss");
-        treeMap.put("count", "3");
-        treeMap.put("l", "none");
-        treeMap.put("timestamp", "1545301095841");
+        //treeMap.put("l", "none");
+        //treeMap.put("timestamp", "1");
+
+        //treeMap.put("userId", "1f45f9706fe61c77");
+        //treeMap.put("uuid", "1f45f9706fe61c77");
+        //treeMap.put("money", "1");
+        //treeMap.put("serialNo", "1_wx");
+        //treeMap.put("noticeLanguage", "en");
+
         String sign = getSign(treeMap);
         System.out.println(sign);
     }
@@ -39,7 +47,7 @@ public class GenSign {
     private static String getSign(TreeMap<String, String> params) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> param : params.entrySet()) {
-            sb.append(param.getKey()).append("=").append(param.getValue()).append("&");
+            sb.append(param.getKey()).append(":").append(param.getValue()).append("&");
         }
 
         StringBuilder builder = new StringBuilder(sb);

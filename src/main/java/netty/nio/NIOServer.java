@@ -40,13 +40,13 @@ public class NIOServer {
         SocketChannel socketChannel = (SocketChannel)key.channel();
         socketChannel.read(readByteBuffer);
         String resp  = new String (readByteBuffer.array()).trim();
-        readByteBuffer.clear();
+        //readByteBuffer.clear();
         System.out.println("server recv: " + resp);
 
         String req = "Hello, I am nio server";
         ByteBuffer outBuffer = ByteBuffer.wrap(req.getBytes(StandardCharsets.UTF_8));
         socketChannel.write(outBuffer);
-        socketChannel.register(key.selector(), SelectionKey.OP_WRITE);
+        socketChannel.register(key.selector(), SelectionKey.OP_READ);
     }
 
     public static void main(String[] args) throws Exception {
