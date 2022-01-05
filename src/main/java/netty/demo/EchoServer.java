@@ -5,6 +5,7 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
@@ -15,8 +16,10 @@ public class EchoServer {
     static final int PORT = 8007;
 
     public static void main(String[] args) {
-        //bossGroup是获取连接的，workerGroup 是用来处理连接的，这两个线程组都是死循环
+        //bossGroup是获取连接的，workerGroup 是用来处理连接的，这两个线程组都是死循环Epoll
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        //EpollEventLoopGroup bossGroup = new EpollEventLoopGroup();
+
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try {

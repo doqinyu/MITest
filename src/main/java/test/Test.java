@@ -1,6 +1,7 @@
 package test;
 
 
+import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.apache.commons.lang3.StringUtils;
 import utils.ListUtils;
@@ -22,6 +23,8 @@ public class Test {
     private static String DATE_11_01 = "2021-09-24";//2021-11-01 00:00:00
     private static String h5PagePrefix = "panipuri://com.funnypuri.client/app/web?url=";
     private static String zpointPage ="http://sandbox-h5.zilivideo.com/h5/zPoints/result";
+    private static String videoDetailPrefix = "panipuri://com.funnypuri.client/app/moments/detail?type=4&newsId=%s";
+    private static String zpointsIdentity = "&zpointType=zpoints";
     /**
      * top 用户的截取阈值
      */
@@ -384,48 +387,32 @@ public class Test {
         System.out.println("############################## function end 3 ##############################");
     }
 
+    public static void test19(int n) {
+        switch (n) {
+            case 1:
+                System.out.println("1");
+            case 2:
+                System.out.println("2");
+                break;
+            case 3:
+                System.out.println("3");
+            case 4:
+                System.out.println("4");
+                break;
+            default:
+                break;
+        }
+    }
+
 
     public static void main(String[] args) throws ParseException, UnsupportedEncodingException, InterruptedException {
         Test test = new Test();
-
-//        String userId = null;
-//        if (StringUtils.isBlank(userId) ) {
-//            System.out.println("true");
-//        } else {
-//            System.out.println("false");
-//        }
-
-        //test15();
-        //String s = "2020-11-08";
-        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        //Date birthday = simpleDateFormat.parse(s);
-//        Calendar calendar = Calendar.getInstance();
-//        calendar.setTime(birthday);
-//        calendar.add(Calendar.YEAR, 18);
-//        Date yonger = calendar.getTime();
-        //test.test16(s);
-        //System.out.println("s = "+ s);
-
-//        Calendar calendar = Calendar.getInstance();
-//        calendar.setTime(new Date());
-//        calendar.add(Calendar.DAY_OF_MONTH, -1);
-//        String yesterday= simpleDateFormat.format(calendar.getTime());
-//        System.out.println();
-//        String url = "panipuri://com.funnypuri.client/app/web?url=http%3A%2F%2Fsandbox-h5.zilivideo.com%2Fh5%2FzPoints%2Fresult%3Fcategory%3D39%26count%3D%25s";
-//        int count = 1;
-//        String format = String.format(url, count);
-//        System.out.println();
-
-        //urlEncoder();
-        //test17();
-        //test18();
-        String url = h5PagePrefix + URLEncoder.encode(zpointPage + String.format("?category=%s&count=%s", 39, 5), "UTF-8");
-        String b = "-303033600000";
-        //boolean numeric = StringUtils.isNumeric(b);
-        Long aLong = Long.valueOf(b);
-
-
-        System.out.println("main end");
+        test19(5);
+        int low = 0;
+        int high = 100;
+        int CQ_STORE_UNIT_SIZE = 20;
+        int m = (low + high) / (2 * CQ_STORE_UNIT_SIZE) * CQ_STORE_UNIT_SIZE;
+        System.out.println("m = " + m);
     }
 
 

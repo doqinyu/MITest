@@ -8,6 +8,27 @@
         <option value="$PROJECT_DIR$/../netty/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../netty/all/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/buffer/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/codec-haproxy/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/codec-http/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/codec-socks/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/codec/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/common/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/example/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/handler/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/microbench/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/tarball/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/testsuite-osgi/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/testsuite/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/transport-rxtx/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/transport-sctp/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/transport-udt/pom.xml" />
+        <option value="$PROJECT_DIR$/../netty/transport/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

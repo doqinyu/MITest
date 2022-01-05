@@ -47,7 +47,7 @@ public class GenSign {
     private static String getSign(TreeMap<String, String> params) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> param : params.entrySet()) {
-            sb.append(param.getKey()).append(":").append(param.getValue()).append("&");
+            sb.append(param.getKey()).append("=").append(param.getValue()).append("&");
         }
 
         StringBuilder builder = new StringBuilder(sb);
