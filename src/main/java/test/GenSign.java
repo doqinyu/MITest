@@ -20,17 +20,17 @@ public class GenSign {
 
     private static void genParam() {
         TreeMap<String, String> treeMap = new TreeMap<>();
-        treeMap.put("uId", "e53d1da20d27db19");
-        treeMap.put("page", "0");
-        treeMap.put("size", "10");
+        //treeMap.put("uId", "e53d1da20d27db19");
+        //treeMap.put("page", "0");
+        //treeMap.put("size", "10");
 
 
-        treeMap.put("version_code", "100");
+        treeMap.put("version_code", "1");
         treeMap.put("server_code", "1");
-        //treeMap.put("r", "IN");
+        treeMap.put("r", "I");
         treeMap.put("passport", "boss");
-        //treeMap.put("l", "none");
-        //treeMap.put("timestamp", "1");
+        treeMap.put("uuid", "1");
+        treeMap.put("timestamp", "1");
 
         //treeMap.put("userId", "1f45f9706fe61c77");
         //treeMap.put("uuid", "1f45f9706fe61c77");

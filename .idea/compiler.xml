@@ -7,7 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="zookeeper-recipes-queue" />
+        <module name="zookeeper-prometheus-metrics" />
+        <module name="zookeeper" />
+        <module name="zookeeper-recipes-lock" />
+        <module name="zookeeper-recipes-election" />
         <module name="MyTest" />
+        <module name="zookeeper-jute" />
+        <module name="zookeeper-compatibility-tests-curator" />
         <module name="MITest" />
       </profile>
     </annotationProcessing>
@@ -22,6 +29,7 @@
       <module name="netty-example" target="1.6" />
       <module name="netty-handler" target="1.6" />
       <module name="netty-microbench" target="1.6" />
+      <module name="netty-parent" target="1.6" />
       <module name="netty-tarball" target="1.6" />
       <module name="netty-testsuite" target="1.6" />
       <module name="netty-testsuite-osgi" target="1.6" />
@@ -49,6 +57,13 @@
       <module name="netty-transport-rxtx" options="-Xlint:-options" />
       <module name="netty-transport-sctp" options="-Xlint:-options" />
       <module name="netty-transport-udt" options="-Xlint:-options" />
+      <module name="zookeeper" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
+      <module name="zookeeper-compatibility-tests-curator" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
+      <module name="zookeeper-jute" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
+      <module name="zookeeper-prometheus-metrics" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
+      <module name="zookeeper-recipes-election" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
+      <module name="zookeeper-recipes-lock" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
+      <module name="zookeeper-recipes-queue" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
     </option>
   </component>
 </project>

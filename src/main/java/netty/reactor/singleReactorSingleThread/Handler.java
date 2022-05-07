@@ -12,6 +12,7 @@ public class Handler implements Runnable {
     ByteBuffer writeByteBuffer = ByteBuffer.allocate(100);
     ByteBuffer readByteBuffer = ByteBuffer.allocate(100);
     static AtomicInteger atomicInteger = new AtomicInteger(0);
+    String clientMsg = "";
 
     public static final int READING = 0;
     public static final int WRITING = 1;
@@ -48,7 +49,8 @@ public class Handler implements Runnable {
             byte[] data = new byte[readByteBuffer.remaining()];
             readByteBuffer.get(data, 0, data.length);
 
-            System.out.println("from client: " + new String(data).trim());
+            clientMsg  = new String(data).trim();
+            System.out.println("from client: " + clientMsg);
             readByteBuffer.clear();
 
             atomicInteger.incrementAndGet();
@@ -65,7 +67,8 @@ public class Handler implements Runnable {
     private void write() {
         try {
             SocketChannel channel = (SocketChannel) selectionKey.channel();
-            String msg = " server handle count ---> " + atomicInteger.incrementAndGet();
+            String msg = " server receive = " + clientMsg + ", handle count ---> " + atomicInteger.incrementAndGet();
+            clientMsg = "";
             writeByteBuffer.put(msg.getBytes(StandardCharsets.UTF_8));
             writeByteBuffer.flip();
             channel.write(writeByteBuffer);

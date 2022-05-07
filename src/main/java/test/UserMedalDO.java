@@ -1,11 +1,13 @@
 package test;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 //表user_medel对应的DO
 @Data
+@NoArgsConstructor
 public class UserMedalDO {
     Long id;
     String userId;

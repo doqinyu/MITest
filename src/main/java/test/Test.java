@@ -3,18 +3,29 @@ package test;
 
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.apache.commons.lang3.StringUtils;
 import utils.ListUtils;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Test {
 
@@ -25,12 +36,16 @@ public class Test {
     private static String zpointPage ="http://sandbox-h5.zilivideo.com/h5/zPoints/result";
     private static String videoDetailPrefix = "panipuri://com.funnypuri.client/app/moments/detail?type=4&newsId=%s";
     private static String zpointsIdentity = "&zpointType=zpoints";
+
+    private static final String INDIA_ZONE = "Asia/Kolkata";
     /**
      * top 用户的截取阈值
      */
     private static final int THRESHOLD_TOP = 2;
 
-    public void test() {
+    public static void test() {
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(1);
         List<UserMedalDO> list = new ArrayList<UserMedalDO>();
         list.add(new UserMedalDO(1, 1));
         list.add(new UserMedalDO(1, 2));
@@ -41,11 +56,15 @@ public class Test {
 
         list.add(new UserMedalDO(3, 1));
 
+        list.stream().filter(item -> list2.contains(item.getSeriesNo())).collect(Collectors.toList())
         //Optional<UserMedalDO> max = list.stream().max(Comparator.comparing(UserMedalDO::getLevel));
         //System.out.println(max.get().getLevel());
 
         //返回该用户SABC各个等级的勋章总数
-//        Map<Integer, List<UserMedalDO>> collect = list.stream().collect(Collectors.groupingBy(t -> t.getLevel()));
+        Map<Integer, List<UserMedalDO>> collect = list.stream().collect(Collectors.groupingBy(t -> t.getLevel()));
+        List<List<UserMedalDO>> collect1 = collect.entrySet().stream().filter((item) -> {
+            return list2.contains(item.getKey());
+        }).collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue())).values().stream().collect(Collectors.toList());
 //        List<UserMedalLevelDO> level = new ArrayList<>();
 //        collect.forEach((key,value) -> {
 //            level.add(new UserMedalLevelDO(key, value.size()));
@@ -54,7 +73,7 @@ public class Test {
 
         //首先筛选出该序列的详情
         int seriesNo = 2;
-        List<UserMedalDO> collect = list.stream().filter(item -> item.getSeriesNo() == seriesNo).collect(Collectors.toList());
+        //List<UserMedalDO> collect = list.stream().filter(item -> item.getSeriesNo() == seriesNo).collect(Collectors.toList());
         System.out.println();
     }
 
@@ -404,16 +423,64 @@ public class Test {
         }
     }
 
+    public static void test20() {
+        File file = new File("/Users/doqinvera/Desktop/MITest/src/main/resources/test.txt");
+        System.out.println("length = " + file.length());
+
+    }
+
+    public static void test21() {
+        List<String> cidAll = new ArrayList<>();
+        cidAll.add("c1");
+        cidAll.add("c2");
+        cidAll.add("c3");
+
+        List<String> mqAll = new ArrayList<>();
+        mqAll.add("q1");
+        mqAll.add("q2");
+        mqAll.add("q3");
+        mqAll.add("q4");
+        mqAll.add("q5");
+        mqAll.add("q6");
+        mqAll.add("q7");
+        mqAll.add("q8");
+
+        String currentCID = "c1";
+
+        List<String> result = new ArrayList<>();
+        int index = cidAll.indexOf(currentCID);
+        int mod = mqAll.size() % cidAll.size();
+        int averageSize =
+                mqAll.size() <= cidAll.size() ? 1 : (mod > 0 && index < mod ? mqAll.size() / cidAll.size()
+                        + 1 : mqAll.size() / cidAll.size());
+        int startIndex = (mod > 0 && index < mod) ? index * averageSize : index * averageSize + mod;
+        int range = Math.min(averageSize, mqAll.size() - startIndex);
+        for (int i = 0; i < range; i++) {
+            result.add(mqAll.get((startIndex + i) % mqAll.size()));
+        }
+
+    }
+
+    /**
+     * 判断publishTime 是否是今天
+     *
+     * @param publishTime
+     * @return
+     */
+    public static boolean isToday(long publishTime) {
+        ZoneId zoneId = ZoneId.of(INDIA_ZONE);
+        LocalDateTime localDateTime = LocalDate.now(zoneId).atTime(0, 0, 0);
+        LocalDateTime target = LocalDateTime.ofInstant(Instant.ofEpochMilli(publishTime), zoneId);
+        return localDateTime.isBefore(target) || localDateTime.isEqual(target);
+    }
+
 
     public static void main(String[] args) throws ParseException, UnsupportedEncodingException, InterruptedException {
-        Test test = new Test();
-        test19(5);
-        int low = 0;
-        int high = 100;
-        int CQ_STORE_UNIT_SIZE = 20;
-        int m = (low + high) / (2 * CQ_STORE_UNIT_SIZE) * CQ_STORE_UNIT_SIZE;
-        System.out.println("m = " + m);
+        test();
+
     }
+
+
 
 
 }
