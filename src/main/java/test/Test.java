@@ -56,7 +56,7 @@ public class Test {
 
         list.add(new UserMedalDO(3, 1));
 
-        list.stream().filter(item -> list2.contains(item.getSeriesNo())).collect(Collectors.toList())
+        list.stream().filter(item -> list2.contains(item.getSeriesNo())).collect(Collectors.toList());
         //Optional<UserMedalDO> max = list.stream().max(Comparator.comparing(UserMedalDO::getLevel));
         //System.out.println(max.get().getLevel());
 
