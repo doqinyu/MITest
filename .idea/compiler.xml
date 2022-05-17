@@ -7,63 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="MyTest" />
+        <module name="zookeeper" />
+        <module name="zookeeper-recipes-election" />
+        <module name="zookeeper-compatibility-tests-curator" />
         <module name="zookeeper-recipes-queue" />
         <module name="zookeeper-prometheus-metrics" />
-        <module name="zookeeper" />
-        <module name="zookeeper-recipes-lock" />
-        <module name="zookeeper-recipes-election" />
-        <module name="MyTest" />
         <module name="zookeeper-jute" />
-        <module name="zookeeper-compatibility-tests-curator" />
+        <module name="zookeeper-recipes-lock" />
         <module name="MITest" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="netty-all" target="1.6" />
-      <module name="netty-buffer" target="1.6" />
-      <module name="netty-codec" target="1.6" />
-      <module name="netty-codec-haproxy" target="1.6" />
-      <module name="netty-codec-http" target="1.6" />
-      <module name="netty-codec-socks" target="1.6" />
-      <module name="netty-common" target="1.6" />
-      <module name="netty-example" target="1.6" />
-      <module name="netty-handler" target="1.6" />
-      <module name="netty-microbench" target="1.6" />
-      <module name="netty-parent" target="1.6" />
-      <module name="netty-tarball" target="1.6" />
-      <module name="netty-testsuite" target="1.6" />
-      <module name="netty-testsuite-osgi" target="1.6" />
-      <module name="netty-transport" target="1.6" />
-      <module name="netty-transport-rxtx" target="1.6" />
-      <module name="netty-transport-sctp" target="1.6" />
-      <module name="netty-transport-udt" target="1.6" />
-    </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="netty-all" options="-Xlint:-options" />
-      <module name="netty-buffer" options="-Xlint:-options" />
-      <module name="netty-codec" options="-Xlint:-options" />
-      <module name="netty-codec-haproxy" options="-Xlint:-options" />
-      <module name="netty-codec-http" options="-Xlint:-options" />
-      <module name="netty-codec-socks" options="-Xlint:-options" />
-      <module name="netty-common" options="-Xlint:-options" />
-      <module name="netty-example" options="-Xlint:-options" />
-      <module name="netty-handler" options="-Xlint:-options" />
-      <module name="netty-microbench" options="-Xlint:-options" />
-      <module name="netty-testsuite" options="-Xlint:-options" />
-      <module name="netty-testsuite-osgi" options="-Xlint:-options" />
-      <module name="netty-transport" options="-Xlint:-options" />
-      <module name="netty-transport-rxtx" options="-Xlint:-options" />
-      <module name="netty-transport-sctp" options="-Xlint:-options" />
-      <module name="netty-transport-udt" options="-Xlint:-options" />
-      <module name="zookeeper" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
-      <module name="zookeeper-compatibility-tests-curator" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
-      <module name="zookeeper-jute" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
-      <module name="zookeeper-prometheus-metrics" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
-      <module name="zookeeper-recipes-election" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
-      <module name="zookeeper-recipes-lock" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
-      <module name="zookeeper-recipes-queue" options="-Werror -Xlint:deprecation -Xlint:unchecked -Xlint:-options -Xdoclint:-missing -Xpkginfo:always" />
-    </option>
   </component>
 </project>
