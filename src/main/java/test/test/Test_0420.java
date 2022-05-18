@@ -1,7 +1,10 @@
 package test.test;
 
 import java.util.*;
-
+/**
+ * 重点整理的题目：
+ * 50
+ */
 public class Test_0420 {
 
     //36:有效的数独
@@ -149,50 +152,67 @@ public class Test_0420 {
     }
 
 
-    //50
+    //50[todo] 快速乘
     public double myPow(double x, int n) {
-        if (x == 0 || x== 1) {
-            return x;
-        }
-        if (n == 0) {
+        if (n == 0 || x == 1) {
             return 1;
         }
 
-        boolean nagative = false;
-        if (n < 0) {
-            nagative = true;
-            n = -n;
-        }
-        double result = 1;
-        for (int i = 0; i< n; i++) {
-            result *=x;
+        if(x!=-1.0 && n==Integer.MIN_VALUE)
+            return 0;
+
+        if (x == -1.0) {
+            if (Math.abs(n)%2 == 0) {
+                return 1;
+            } else {
+                return -1;
+            }
         }
 
-        if (nagative) {
-            result = 1/result;
+        if (n == 1) {
+            return x;
         }
-        return result;
+
+        int sig = 1;
+        if (n < 0) {
+            n = -n;
+            sig = -1;
+        }
+
+        double ans = 1;
+        while(n !=0) {
+            if ((n & 1) ==1) {
+                n--;
+                ans = ans * x;
+            }
+
+            x = x*x;
+            n = n/2;
+        }
+        if (sig < 0) {
+            ans = 1/ans;
+        }
+        return ans;
     }
 
     //53
     public int maxSubArray(int[] nums) {
         int n = nums.length;
-        //dp[i][j] = sum (nums[i] ... nums[j])
-        int[][] dp = new int[n][n];
-        dp[0][0] = nums[0];
-        int max = nums[0];
+        if (n == 1) {
+            return nums[0];
+        }
+        //dp[i] 表示以nums[i]结尾的最大子序列
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        int max = dp[0];
         for (int i = 1; i< n; i++) {
-            for (int j = i; j >= 0; j--) {
-                if (i == j) {
-                    dp[j][i] = nums[i];
-                } else {
-                    dp[j][i] = dp[j][i-1] + nums[i];
-                }
-                if (dp[j][i] > max) {
-                    max = dp[j][i];
-                }
-
-            }
+            /**
+             * 如果nums[i]加入前面的子序列，dp[i]=dp[i-1]
+             * 如果nums[i]不加入前面的子序列，dp[i]=nums[i]
+             */
+            dp[i] = Math.max(dp[i-1]+ nums[i], nums[i]);
+            //max取以每个nums[i]结尾的最大子序列即可
+            max = Math.max(max, dp[i]);
         }
         return max;
     }
@@ -208,7 +228,7 @@ public class Test_0420 {
         for (int i = 0; i< nums.length ; i++) {
             f = Math.max(f, i + nums[i]);
             //如果此处为0，且不是最后一个元素，那么必然被卡住
-            if (nums[i] == 0 && f == i && i != nums.length-1) {
+            if (nums[i] == 0 && f <= i && i != nums.length-1) {
                 return false;
             }
         }
@@ -264,8 +284,10 @@ public class Test_0420 {
     public static void main(String[] args) {
         Test_0420 test_20 = new Test_0420();
         double x = 2.00000;
-        int[][] nums = {{1,4},{4,5}};
-        test_20.merge(nums);
+        int[] ns = {1,2,3};
+        //int[][] nums = {{1,4},{4,5}};
+        //test_20.merge(nums);
+        List<List<Integer>> permute = test_20.permute(ns);
         System.out.println();
     }
 }
