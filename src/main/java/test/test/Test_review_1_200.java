@@ -280,18 +280,73 @@ public class Test_review_1_200 {
 
     //91
     public int numDecodings(String s) {
-        if (s.length() < 2){
-            return s.length();
+        if (s.length() == 0 || (s.length() > 0 && s.charAt(0) == '0')) {
+            return 0;
+        }
+
+        if (s.length() == 1) {
+            return 1;
         }
 
         int n = s.length();
         //dp[i] 表示s[0..i]的解码方式
         int[] dp = new int[n];
         dp[0] = 1;
-        if (s.charAt(0) == '0') {
-
+        if (Integer.parseInt(s.substring(0,2))<= 26) {
+            dp[1] = 2;
+        } else {
+            dp[1] = 1;
         }
-        return 0;
+        for (int i = 2; i< s.length(); i++) {
+            //如果当前数字是0，那么判断其前一个数字
+            if (s.charAt(i) == '0') {
+                //如果s[i]为0，且 1 <= s[i-1,i] <=26 ,那么s[i]只能由s[i-2] + s[i-1,i]组合而成
+                if (s.charAt(i-1) == '1' || s.charAt(i-1) == '2') {
+                    dp[i] = dp[i-2];
+                } else {
+                    //否则没有满足的条件的组合方式
+                    return 0;
+                }
+
+            } else {
+                //如果s[i]不为0，首先s[i]可以由s[i-1] + s[i]组合而成
+                dp[i] = dp[i-1];
+                //如果s[i-1]不为0，且s[i-1,i] <=26，那么s[i]还可以由s[i-2] + s[i-1,i]组合而成
+                if (s.charAt(i-1) != '0' && Integer.parseInt(s.substring(i-1, i+1)) <= 26) {
+                    dp[i] += dp[i-2];
+                }
+            }
+        }
+        return dp[s.length() - 1];
+    }
+
+    //116
+    public Node connect(Node root) {
+        if (null == root || (root.left == null && root.right == null))  {
+            return root;
+        }
+
+        root.left = connect(root, root.left, true);
+        root.right = connect(root, root.right, false);
+        return root;
+    }
+
+    public Node connect(Node parent, Node root, boolean next) {
+        if (root == null) {
+            return null;
+        }
+        //root 同层连接
+        root.next = parent.right;
+        //如果root存在next，且root存在下一层的子节点，连接下一层
+        if (next && root.right !=null && root.next.left != null) {
+            root.right.next = root.next.left;
+        }
+        //标记root的左子树
+        connect(root, root.left, root.next == null);
+        //标记root的右子树
+        connect(root, root.right, root.next == null);
+
+        return root;
     }
 
     public static void main(String[] args) {
@@ -302,7 +357,7 @@ public class Test_review_1_200 {
         //List<String> strings = test_preview.generateParenthesis(n);
         //test_review.searchRange(p, n);
         //boolean b = test_review.canJump(p);
-        String w1 = "horse";
+        String w1 = "226";
         String w2 = "ros";
         //int i = test_review.minDistance(w1, w2);
 //        int[][] m ={
@@ -311,7 +366,9 @@ public class Test_review_1_200 {
 //                {1,1,1}
 //        };
         //test_review.setZeroes(m);
-        test_review.sortColors(p);
+        //test_review.sortColors(p);
+        int i = test_review.numDecodings(w1);
+
         System.out.println();
     }
 }

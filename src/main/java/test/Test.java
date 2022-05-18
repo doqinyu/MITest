@@ -19,6 +19,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -38,6 +39,11 @@ public class Test {
     private static String zpointsIdentity = "&zpointType=zpoints";
 
     private static final String INDIA_ZONE = "Asia/Kolkata";
+    private static final String BEIJING_ZONE = "Asia/Shanghai";
+    /**
+     * 活动排行榜访问时间分界线
+     */
+    public static final int DIVIDING_TIME_ACTIVITY_RANKING = 10;
     /**
      * top 用户的截取阈值
      */
@@ -476,8 +482,20 @@ public class Test {
 
 
     public static void main(String[] args) throws ParseException, UnsupportedEncodingException, InterruptedException {
-        test();
+        //test();
+        LocalDateTime divideTime = LocalDate.now(ZoneId.of(BEIJING_ZONE)).atTime(DIVIDING_TIME_ACTIVITY_RANKING, 0, 0);
+        LocalDateTime now = LocalDateTime.now(ZoneId.of(BEIJING_ZONE));
 
+        if (now.isAfter(divideTime)) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime targetTime = now.minusDays(1);
+        String format1 = df.format(targetTime);
+        String format2 = df.format(now);
+        System.out.println();
     }
 
 
