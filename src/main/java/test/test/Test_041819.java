@@ -1,32 +1,47 @@
 package test.test;
 
+import io.netty.util.internal.StringUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.*;
 
+/**
+ * 重点整理的题目：
+ * 3 7 8(有限状态机) 14 15 20 29 33 34
+ */
 public class Test_041819 {
     //3 最长不重复字串
+
+    /**
+     * 滑动窗口解法
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring(String s) {
-        int maxLen = 1;
+        int maxLen = 0;
         //最长不重复字串的左边下标值(包含)
         int left = 0;
-        //最长不重复字串的右边下标值(包含)
-        int right = 0;
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
-            //如果s[i]字符在当前最长字串中未出现过，最长不重复字串+1
-            if (map.get(s.charAt(i)) == null) {
-                map.put(s.charAt(i), i);
-                right++;
-            } else {
-                //如果s[i]字符在当前最长字串中出现过,下一次最长重复字串从当前字符开始再计算
-                maxLen = Math.max(maxLen, right - left);
-                left = i;
-                right = i;
+            /*
+                如果s[i]字符中出现过，收缩滑动窗口。下一个不重复字串的起始位置为
+                    如果s[i]在当前最长字串中, left = 上一次重复位置的下一个
+                    如果s[i]不在当前最长字串中, left 不变
+            * */
+            if (map.get(s.charAt(i)) != null) {
+                left = Math.max(left, map.get(s.charAt(i))+ 1);
+
             }
+            map.put(s.charAt(i), i);
+            //更新 maxLen
+            maxLen = Math.max(maxLen, i - left + 1);
+
         }
 
-        return Math.max(maxLen, right - left + 1);
-
+        return maxLen;
     }
+
 
     //以s[left,right]为对称点，找到s中的最长回文子串
     public String longestPalindrome(String s, int left, int right) {
@@ -41,8 +56,12 @@ public class Test_041819 {
 
     //5 最长回文字串
     public String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
         //最长回文字串的最小下标(包含)
-        String target = "";
+        String target = s.substring(0,1);
+        //最长回文字串的最小下标(包含)
         for (int i = 0; i < s.length() - 1; i++) {
             //奇对称最长值
             String s1 = longestPalindrome(s, i, i);
@@ -66,77 +85,48 @@ public class Test_041819 {
 
     //7
     public int reverse(int x) {
-        //标识x是否为负数
-        boolean nagtive = false;
-        int target = 0;
-
+        int sig = 1;
         if (x < 0) {
-            nagtive = true;
+            sig = -1;
+            x = -x;
         }
-        while (x != 0) {
-            int remainder = x % 10;
-            x = x / 10;
-            target = target * 10 + remainder;
+        int max = (int)(Math.pow(2,31)/10);
+        List<Integer> list = new ArrayList<>();
+        int y = x;
+        //反向记录余数
+        while (y > 0) {
+            int remainder = y % 10;
+            y = y / 10;
+            list.add(remainder);
         }
-
-        //如果结果未溢出
-        if ((target > 0 && !nagtive) || (target < 0 && nagtive)) {
-            return target;
-        }
-        //溢出则返回0
-        return 0;
-    }
-
-    //8
-    public int myAtoi(String s) {
-        //是否开始
-        boolean isBegin = false;
-        //是否是负数
-        boolean isNagative = false;
-        int result = 0;
-        for (int i = 0; i < s.length(); i++) {
-            //如果当前字符是空格，若还没有开始计数，则直接跳过
-            if (s.charAt(i) == ' ') {
-                if (!isBegin) {
-                    continue;
-                } else {
-                    //否则直接截断停止
-                    break;
-                }
-            } else if (s.charAt(i) == '0') {
-                if (!isBegin) {
-                    continue;
-                } else {
-                    //否则计数
-                    result = result * 10;
-                }
-            } else if (s.charAt(i) == '-') {
-                if (!isBegin) {
-                    isBegin = true;
-                    isNagative = true;
-                } else {
-                    break;
-                }
-            } else if (s.charAt(i) >= '1' && s.charAt(i) <= '9') {
-                isBegin = true;
-                result = result * 10 + s.charAt(i) - '0';
-            } else {
+        y = 0;
+        //正向累加，同时判断是否溢出
+        for (int i = 0; i < list.size(); i++) {
+            //2的31次方的最高位为7
+            if (y > max || (y == max && i < list.size()-1 && list.get(i+1) >= 7)) {
+                y = 0;
                 break;
             }
+
+            y = y * 10 + list.get(i);
         }
 
-        if (isNagative) {
-            result = -result;
-            //负数溢出
-            if (result > 0) {
-                result = Integer.MIN_VALUE;
-            }
-        } else if (result < 0) {
-            //正数溢出
-            result = Integer.MAX_VALUE;
-        }
+        y = y * sig;
+        return y;
+    }
 
-        return result;
+    /**
+     * 8
+     *https://leetcode.cn/problems/string-to-integer-atoi/solution/zi-fu-chuan-zhuan-huan-zheng-shu-atoi-by-leetcode-/
+     * @param s
+     * @return
+     */
+    public int myAtoi(String s) {
+        Automaton automaton = new Automaton();
+        for (int i = 0; i< s.length(); i++) {
+            automaton.compute(s.charAt(i));
+        }
+        return (int) (automaton.sign * automaton.ans);
     }
 
     //9
@@ -203,6 +193,10 @@ public class Test_041819 {
         if (strs.length == 1) {
             return strs[0];
         }
+        if (strs[0] == null || strs[0].length() == 0) {
+            return "";
+        }
+
         int i = 0;
         char target;
         boolean macth = true;
@@ -218,6 +212,10 @@ public class Test_041819 {
             i++;
         } while (i < strs[0].length() && macth);
 
+        //todo 跳出循环时，可能匹配，也可能不匹配，因此需要判断
+        if(macth) {
+            return strs[0].substring(0, i);
+        }
         return strs[0].substring(0, i - 1);
     }
 
@@ -243,9 +241,17 @@ public class Test_041819 {
                         list.add(nums[j]);
                         list.add(nums[k]);
                         result.add(list);
-
+                        //todo 第二个数去重
                         j++;
+                        while (j < k && nums[j]== nums[j-1]) {
+                            j++;
+                        }
+
+                        //todo 第三个数去重
                         k--;
+                        while (j < k && nums[k]== nums[k+1]) {
+                            k--;
+                        }
                     } else if (nums[i] + nums[j] + nums[k] > 0) {
                         k--;
                     } else {
@@ -259,10 +265,16 @@ public class Test_041819 {
 
     //20
     public boolean isValid(String s) {
+        if (s.length() % 2 != 0) {
+            return false;
+        }
         List<Character> list = new ArrayList<>();
         for (int i = 0; i< s.length(); i++) {
             if (s.charAt(i) == '(' || s.charAt(i) == '[' ||s.charAt(i) == '{') {
                 list.add(s.charAt(i));
+            } else if (list.size() <= 0) {
+                //todo list size判断
+                return false;
             } else if (s.charAt(i) == ')' && list.get(list.size() - 1) !='('
                         || s.charAt(i) == '}' && list.get(list.size() - 1) !='{'
                         || s.charAt(i) == ']' && list.get(list.size() - 1) !='[') {
@@ -319,7 +331,7 @@ public class Test_041819 {
             return -1;
         }
 
-        for (int i = 0; i < haystack.length() - needle.length() ;i++) {
+        for (int i = 0; i <= haystack.length() - needle.length() ;i++) {
             String subStr = haystack.substring(i, i+needle.length());
             if (subStr.equals(needle)) {
                 return i;
@@ -330,79 +342,98 @@ public class Test_041819 {
 
     //29
     public int divide(int dividend, int divisor) {
-        boolean isSame= true;
-        if ((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0) ) {
-            isSame = false;
+        if((dividend==Integer.MIN_VALUE && divisor==-1)|| divisor==0)
+            return Integer.MAX_VALUE;
+
+        // 当传入的int值为Integer.MIN_VALUE时,Math.abs(Integer.MIN_VALUE)=Integer.MAX_VALUE + 1;
+        long m = dividend;
+        long n = divisor;
+        if (dividend == Integer.MIN_VALUE) {
+            //todo + 1L,不能 + 1(+1表示int类型相加)
+            m = Integer.MAX_VALUE + 1L;
+        } else {
+            m = Math.abs(dividend);
         }
-        if (dividend < 0) {
-            dividend = -dividend;
-        }
-        if (divisor < 0) {
-            divisor = -divisor;
-        }
-        int result = 0;
-        while (dividend > divisor) {
-            dividend -= divisor;
-            result++;
+        if (divisor == Integer.MIN_VALUE) {
+            n = Integer.MAX_VALUE + 1L;
+        } else {
+            n = Math.abs(divisor);
         }
 
-        if (!isSame) {
-            result = -result;
+        int sig = (dividend > 0) ^ (divisor > 0) ? -1: 1;
+        if (n == 1) {
+            return (int)(sig * m);
         }
+        long res = 0;
+        while (m >= n) {
+            long t = n;
+            long p = 1;
+            while (m >= (t<<1)) {
+                t = t << 1;
+                p = p <<1;
+            }
 
-        return result;
+            res += p;
+            m = m - t;
+        }
+        return (int)(res*sig);
     }
+
+    /**
+     * todo 【重点】快速加计算 x + y
+     * @param x
+     * @param y
+     * @return
+     */
+    public int quickAdd(int x, int y) {
+        long ans = 0;
+        while (y > 0) {
+            if ((y & 1) == 1) {
+                y--;
+                ans = (ans + x);
+            }
+            y = y/2;
+            x = x + x;
+        }
+        return (int) ans;
+    }
+
+
 
     //33
     public int search(int[] nums, int target) {
+        int n = nums.length;
+        if (n == 0) {
+            return -1;
+        }
+        if (n == 1) {
+            return nums[0] == target? 0: -1;
+        }
         int i = 0;
-        int j = nums.length - 1;
-        if (nums[i] == target) {
-            return i;
-        }
-        if (nums[j] == target) {
-            return j;
-        }
+        int j = n - 1;
 
-        //先二分查找分界点
-        int mid = (i + j)/2;
-        while (i < j) {
-            if (nums[mid] == target || (nums[mid] < nums[mid-1] && nums[mid] < nums[mid+1])) {
-                return mid;
-            }
-            if (nums[mid] > nums[0]) {
-                i = mid +1;
-            } else if (nums[mid] < nums[0]) {
-                j= mid - 1;
-            }
-            mid = (i + j)/2;
-        }
-
-        if (nums[mid] == target) {
-            return mid;
-        }
-        i = 0;
-        j = 0;
-        //如果target 比头元素大，pre = true
-        if (target > nums[0]) {
-            j = mid -1;
-        } else {
-            i = mid;
-        }
-        //在有序数组中二分查找
-        mid = (i + j)/2;
-        while (i < j) {
+        while (i <= j) {
+            int mid = (i + j) / 2;
             if (nums[mid] == target) {
                 return mid;
             }
-            if (nums[mid] > target) {
-                j = mid -1;
-            } else if (nums[mid] < target) {
-                i= mid + 1;
+            if (nums[mid] >= nums[0]) {
+                if (target >= nums[0] && target < nums[mid]) {
+                    j = mid - 1;
+                } else {
+                    i = mid + 1;
+                }
+            } else {
+                if (target > nums[mid] && target <= nums[n-1]) {
+                    i = mid + 1;
+                } else {
+                    j = mid - 1;
+                }
             }
-            mid = (i + j)/2;
         }
+
         return -1;
+
     }
 
     //34
@@ -438,19 +469,37 @@ public class Test_041819 {
         int right = j;
         left = left < 0? 0:left;
         right = right > nums.length? nums.length -1: right;
-
+        //如果计算得到的左边界，比右边界大，说明不存在target
+        if(left > right) {
+            return new int[]{-1,-1};
+        }
         return new int[] {left, right};
     }
 
     public static void main(String[] args) {
         Test_041819 t = new Test_041819();
-        //String s = "()";
-        //int x = 10;
-        //String[] strs = {"dog","racecar","car"};
+        String s = "a";
+        String t1 = "a";
+        //int i = t.lengthOfLongestSubstring(s);
+        //int x = 0;
+        //int reverse = t.reverse(x);
+        //int i = t.myAtoi(s);
+        //String[] strs = {"flower","flower","flower","flower"};
         int[] nums = {5,7,7,8,8,10};
-        int target = 7;
-        //int search = t.search(nums, target);
-        int[] ints = t.searchRange(nums, target);
+        //List<List<Integer>> lists = t.threeSum(nums);
+
+        //boolean valid = t.isValid(s);
+        //int i = t.strStr(s, t1);
+        //int divide = t.divide(-2147483648, -1);
+
+        //int i = t.quickAdd(5, 53);
+        int x = 6;
+        int y = -3;
+        int z = 4;
+        //int divide = t.divide(-2147483648, 2);
+        //int target = 7;
+        //int search = t.search(nums, x);
+        int[] ints = t.searchRange(nums, x);
         System.out.println();
     }
 }
