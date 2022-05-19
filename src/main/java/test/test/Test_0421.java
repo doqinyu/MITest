@@ -1,7 +1,10 @@
 package test.test;
 
 import java.util.*;
-
+/**
+ * 重点整理的题目：
+ * 66 69 88
+ */
 public class Test_0421 {
 
     //62
@@ -27,32 +30,32 @@ public class Test_0421 {
         return dp[m-1][n-1];
     }
 
-    //66
+    /**
+     * 66
+     * 如果 digits的末尾没有 9，例如 [1, 2, 3]，那么我们直接将末尾的数加一，得到 [1, 2, 4]并返回；
+     * 如果 digits 的末尾有若干个 99，例如 [1, 2, 3, 9, 9]，那么我们只需要找出从末尾开始的第一个不为 9的元素，即 3，将该元素加一，得到 [1, 2, 4, 9, 9]。随后将末尾的 99 全部置零，得到 [1, 2, 4, 0, 0]并返回。
+     *
+     如果 digits 的所有元素都是 9，例如 [9, 9, 9, 9, 9]，那么答案为 [1, 0, 0, 0, 0, 0]。我们只需要构造一个长度比digits 多 1的新数组，将首元素置为 1，其余元素置为 0即可。。
+
+     * @param digits
+     * @return
+     */
     public int[] plusOne(int[] digits) {
-        int n = digits.length - 1;
-        //进位
-        int carry = 1;
-        for (int j = n; j>= 0 ;j--) {
-            if (digits[j] + carry >= 10) {
-                carry = (digits[j] + carry) / 10;
-                digits[j] = (digits[j] + carry) % 10;
-            } else {
-                //不再往前进位
-                digits[j] = digits[j] + carry;
-                carry = 0;
-                break;
+        int n = digits.length;
+        //逆序遍历，找到第一个不为9的数字，加 1清0后返回
+        for (int i = n-1; i>=0; i--) {
+            if (digits[i]!=9) {
+                digits[i]++;
+                for (int j = i+1; j<n;j++) {
+                    digits[j]=0;
+                }
+                return digits;
             }
         }
-        //如果最高位有进位
-        if (carry > 0) {
-            int [] result = new int[n + 2];
-            result[0] = carry;
-            for (int i = 0; i<=n; i++) {
-                result[i + 1] = digits[i];
-            }
-            return result;
-        }
-        return digits;
+        //如果整个数组都是9
+        int[] ans = new int[n+1];
+        ans[0] = 1;
+        return ans;
     }
 
     //69
@@ -62,21 +65,21 @@ public class Test_0421 {
         }
          int l = 1;
         int r = x/2;
-        int mid = (l + r)/2;
+        int mid = 0;
+        int ans = 1;
         while (l <= r) {
-            if (mid * mid <=x && (mid +1)* (mid + 1) > x) {
-                break;
-            }
-            if (mid * mid > x) {
-                r = mid -1;
+            mid = (l + r)>>>1;
+            //todo mid * mid 可能会越界int，因此需要转成(long)mid
+            if ((long)mid * mid <=x) {
+                ans = mid;
+                l = mid +1;
             } else {
-                l = mid + 1;
+                //todo 不判断 (mid+1) * (mid+1) > x，是因为 (mid+1) * (mid+1)可能会超出long
+                r = mid -1;
             }
-
-            mid = (l + r)/2;
         }
 
-        return mid;
+        return ans;
     }
 
     //70
@@ -130,15 +133,69 @@ public class Test_0421 {
         //第一列是否有0
         boolean colFlag = false;
         //判断第一行是否有0
-        for (int i = 0; i< matrix.length; i++) {
-            if (matrix[i][0] == 0) {
+        for (int j = 0; j< matrix[0].length; j++) {
+            if (matrix[0][j] == 0) {
                 rowFlag = true;
                 break;
             }
         }
         //判断第一列是否有0
+        for (int i = 0; i< matrix.length; i++) {
+            if (matrix[i][0] == 0) {
+                colFlag = true;
+                break;
+            }
+        }
+
+        //用原数组的第一行和第一列记录所有出现0的行和列
+        for (int i = 1; i< matrix.length; i++) {
+            for (int j =1; j< matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+
+        //todo 遍历全数组。 m[0][j]=0可能是因为原数组的m[0][j]=0或者第j列出现过0.（[[1,0]]）
+        for (int i = 1; i< matrix.length; i++) {
+            for (int j = 1; j< matrix[0].length; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        //如果第一行出现过0，那么第一行全为0
+        if (rowFlag) {
+            for (int j = 0; j< matrix[0].length; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+        //如果第一列出现过0，那么第一列全为0
+        if (colFlag) {
+            for (int i = 0;  i< matrix.length; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+
+    }
+
+    public void setZeroes2(int[][] matrix) {
+        //第一行是否有0
+        boolean rowFlag = false;
+        //第一列是否有0
+        boolean colFlag = false;
+        //判断第一行是否有0
         for (int j = 0; j< matrix[0].length; j++) {
             if (matrix[0][j] == 0) {
+                rowFlag = true;
+                break;
+            }
+        }
+        //判断第一列是否有0
+        for (int i = 0; i< matrix.length; i++) {
+            if (matrix[i][0] == 0) {
                 colFlag = true;
                 break;
             }
@@ -174,20 +231,21 @@ public class Test_0421 {
 
         //如果第一行出现过0，那么第一行全为0
         if (rowFlag) {
-            for (int j = 1; j< matrix[0].length; j++) {
+            for (int j = 0; j< matrix[0].length; j++) {
                 matrix[0][j] = 0;
             }
         }
         //如果第一列出现过0，那么第一列全为0
         if (colFlag) {
-            for (int i = 1;  i< matrix.length; i++) {
+            for (int i = 0;  i< matrix.length; i++) {
                 matrix[i][0] = 0;
             }
         }
 
     }
 
-    //75 todo test
+
+    //75
     public void sortColors(int[] nums) {
         if (nums == null || nums.length == 0) {
             return ;
@@ -205,20 +263,14 @@ public class Test_0421 {
             }
         }
         int k = 0;
-        while (zero > 0) {
-            nums[k] = 0;
-            zero--;
-            k++;
+        while (zero-- > 0) {
+            nums[k++] = 0;
         }
-        while (one > 0) {
-            nums[k] = 1;
-            one--;
-            k++;
+        while (one-- > 0) {
+            nums[k++] = 1;
         }
-        while (two > 0) {
-            nums[k] = 2;
-            two--;
-            k ++;
+        while (two-- > 0) {
+            nums[k++] = 2;
         }
     }
 
@@ -271,19 +323,16 @@ public class Test_0421 {
         //dp[i][j] 表示board[i][j]是否在某次搜索中已经标记过
         int[][]dp = new int[m][n];
 
-        boolean dfs = dfs(board, word, word.length() - 1, dp, m, n);
+        boolean dfs = dfs(board, word, dp, m, n);
         return dfs;
     }
 
-    public boolean dfs (char[][] board, String word, int index, int[][] dp, int m, int n) {
-        if (index == 0) {
-            return true;
-        }
+    public boolean dfs (char[][] board, String word,int[][] dp, int m, int n) {
         for (int i = 0; i< m ; i++ ) {
             for (int j = 0; j < n; j++) {
-                if (board[i][j] == word.charAt(index) && dp[i][j] == 0) {
+                if (board[i][j] == word.charAt(0) && dp[i][j] == 0) {
                         dp[i][j] = 1;
-                        boolean found = dfs(board, word, index -1, dp, m, n);
+                        boolean found = dfs(board, word,1,  dp, i, j, m, n);
                         if (found == true) {
                             return true;
                         }
@@ -293,6 +342,55 @@ public class Test_0421 {
         }
 
         return false;
+    }
+
+    public boolean dfs (char[][] board, String word,int index, int[][] dp, int i, int j, int m, int n) {
+        //下标越界
+        if (i<0 || i>=m || j< 0||j>=n) {
+            return false;
+        }
+        if (index == word.length()) {
+            return true;
+        }
+        boolean found = false;
+        //上面存在下一个字符
+        if (i> 0 && dp[i-1][j] == 0 && board[i-1][j] == word.charAt(index)) {
+            dp[i-1][j] = 1;
+            found = dfs(board, word, index+1, dp, i-1, j,m,n);
+            dp[i-1][j] = 0;
+        }
+        if (found) {
+            return true;
+        }
+
+        //下面存在下一个字符
+        if (i<m-1 && dp[i+1][j] == 0 && board[i+1][j] == word.charAt(index)) {
+            dp[i+1][j] = 1;
+            found = dfs(board, word, index+1, dp, i+1, j,m,n);
+            dp[i+1][j] = 0;
+        }
+        if (found) {
+            return true;
+        }
+
+        //左面存在下一个字符
+        if (j>0 && dp[i][j-1] == 0 && board[i][j-1] == word.charAt(index)) {
+            dp[i][j-1] = 1;
+            found = dfs(board, word, index+1, dp, i, j-1,m,n);
+            dp[i][j-1] = 0;
+        }
+        if (found) {
+            return true;
+        }
+
+        //右面存在下一个字符
+        if (j<n-1 && dp[i][j+1] == 0 && board[i][j+1] == word.charAt(index)) {
+            dp[i][j+1] = 1;
+            found = dfs(board, word, index+1, dp, i, j+1,m,n);
+            dp[i][j+1] = 0;
+        }
+
+        return found;
     }
 
     //88
@@ -310,6 +408,10 @@ public class Test_0421 {
                 nums1[k--] = nums2[j--];
             }
         }
+        //todo nums2数组还存在未添加的数据时，将剩下的数据添加到nums1中
+        while(j>=0) {
+            nums1[k--] = nums2[j--];
+        }
     }
 
     public static void main(String[] args) {
@@ -317,14 +419,21 @@ public class Test_0421 {
         char[][] board = {
                 {'A','B','C','E'},
                 {'S','F','C','S'},
-                {'A','D','E','E'},
+                {'A','D','E','E'}
         };
-        String word = "ABCB";
-        int[] nums1 = {0,0};
-        int m = 1;
+//        char[][] board = {{'a'}};
+        String word = "SEE";
+        int[] nums1 = {0};
+        int m = 0;
         int[] nums2 = {2};
         int n = 1;
+        //int[][]ns = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+        int[][]ns= {{1,1,1},{1,0,1},{1,1,1}};
         test_21.merge(nums1, m, nums2, n);
+        //int i = test_21.mySqrt(2147395599);
+        //test_21.setZeroes2(ns);
+        //boolean exist = test_21.exist(board, word);
+
         System.out.println();
     }
 }
