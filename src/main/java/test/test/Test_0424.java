@@ -2,67 +2,42 @@ package test.test;
 
 import java.util.*;
 
+/**
+ * 重点整理的题目：
+ * 122(买卖股票的三种题型) 135 139 162 166
+ */
 public class Test_0424 {
-    //122
-    public int maxProfit2(int[] prices) {
-        int n = prices.length;
-        if (n < 2) {
-            return 0;
-        }
-        //dp[i] = 1 表示到第i天为止，所能获得的最大收益
-        //dp[n]:存储历史收益最大值
-        int [] dp = new int[n + 1];
-        //如果第一天买入
-        maxProfit2(prices, 1, dp, false, prices[0]);
-        //如果第一天不买
-        maxProfit2(prices , 1, dp, true, Integer.MAX_VALUE);
-        return dp[n];
-    }
-
-
     /**
+     * 122
+     * todo 重点
+     * 考虑到不能同时交易，因此每天交易结束后，只可能存在两种情况：手里没有股票，手里存在一只股票待卖出
+     * 因此定义状态如下：
+     *  dp[i][0]:第i天结束交易后，手里不存在股票的最大收益值
+     *  dp[i][1]:第i天结束交易后，手里存在一只股票的最大收益值
+     *
+     * dp[i][0]状态转移方程如下：
+     * dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
+     * 即：前一天没有股票了，或者前一天持有一只股票，今日卖出股票
+     *
+     * dp[i][1]状态转移方程如下"
+     * dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] - prices[i]);
+     * 即：前一天存在一只待卖出的股票今日仍然待卖出，或者前一天没有股票了，今日买入一只股票
      * @param prices
-     * @param i   第i天(从0开始)
-     * @param dp
-     * @param hasSold  在第i天之前是否卖出过股票 true:卖出过股票 false:持有股票
-     * @param buyPrice 最近一次买入的价格
      * @return
      */
-    public void maxProfit2(int[] prices , int i, int [] dp, boolean hasSold, int buyPrice) {
-        //到达最后一天时，更新历史收益最大值
-        if (i  >= prices.length) {
-            dp[prices.length] = Math.max(dp[prices.length], dp[prices.length -1]);
-            return ;
+    public int maxProfit2(int[] prices) {
+        int n = prices.length;
+        int[][]dp = new int[n][2];
+        dp[0][0] = 0;
+        dp[0][1] = -prices[0];
+        for (int i = 1; i < n; i++) {
+            dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
+            dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] - prices[i]);
         }
-        //如果之前卖出过股票，那么当天只能选择买或者不买
-        if (hasSold) {
-            dp[i] = dp[i-1];
-            int newBuyPrice = prices[i];
-            //当天买入
-            maxProfit2(prices, i + 1, dp, !hasSold, newBuyPrice);
-            //当天不买
-            maxProfit2(prices, i + 1, dp, hasSold, buyPrice);
-        } else {
-            //当天卖出
-            dp[i] = dp[i-1] + prices[i] - buyPrice;
-            maxProfit2(prices, i + 1, dp, !hasSold, Integer.MAX_VALUE);
-            //当天不卖
-            dp[i] = dp[i-1];
-            maxProfit2(prices, i + 1, dp, hasSold, buyPrice);
-        }
+        //全部交易结束后，持有股票的收益一定低于不持有股票的收益，因此直接返回dp[n-1][0]
+        return dp[n-1][0];
     }
 
-    //122 todo 解法2
-    public int maxProfit(int[] prices) {
-        int sum = 0;
-        // 遍历整个数组
-        for (int i = 0; i < prices.length -1; i++) {
-            // 取差价为正的加到利润里面
-            sum += Math.max(0, prices[i+1] - prices[i]);
-        }
-        // 返回最大利润
-        return sum;
-    }
 
     /**
      * 125 只考虑字母和数字字符，可以忽略字母的大小写。
@@ -74,19 +49,25 @@ public class Test_0424 {
         int i = 0;
         int j = s.length() - 1;
         while (i < j) {
+            //todo 注意i < j 越界问题
             //如果s.charAt(i)不是合法字符，直接跳过
-            while ((s.charAt(i) < '0' || s.charAt(i) > 'z')
+            while (i < j && ((s.charAt(i) < '0' || s.charAt(i) > 'z')
                     || (s.charAt(i) < 'A' && s.charAt(i) > '9')
-                    || (s.charAt(i) < 'a' && s.charAt(i) > 'Z')) {
+                    || (s.charAt(i) < 'a' && s.charAt(i) > 'Z'))) {
                 i++;
             }
+            //todo 注意i < j 越界问题
             //如果s.charAt(j)不是合法字符
-            while ((s.charAt(j) < '0' || s.charAt(j) > 'z')
+            while (i < j && ((s.charAt(j) < '0' || s.charAt(j) > 'z')
                     || (s.charAt(j) < 'A' && s.charAt(j) > '9')
-                    || (s.charAt(j) < 'a' && s.charAt(j) > 'Z')) {
+                    || (s.charAt(j) < 'a' && s.charAt(j) > 'Z'))) {
                 j--;
             }
 
+            //todo 注意i < j 越界问题
+            if (i >= j) {
+                return true;
+            }
 
             char t1 = s.charAt(i);
             //如果s[i]是大写字符，转成小写
@@ -112,36 +93,31 @@ public class Test_0424 {
     //135
     public int candy(int[] ratings) {
         int n = ratings.length;
-        int[] dp = new int[n];
-        //先找到评分最小的位置
-        int minIndex = 0;
-        int min = ratings[0];
-        for (int i = 1; i < n ; i++) {
-            if (ratings[i] < min) {
-                minIndex = i;
-                min = ratings[i];
+        //left[i]:从左往右排，至少给第i个孩子分的糖果数
+        int[] left = new int[n];
+        //right[i]:从右往左排，至少给第i个孩子分的糖果数
+        int[] right = new int[n];
+        left[0] = 1;
+        for (int i = 1; i < n; i++) {
+            //如果当前孩子的分数比左边孩子高，那么必须保证left[i] = left[i-1] +1;
+            if(ratings[i] > ratings[i-1]) {
+                left[i] = left[i-1] +1;
+            } else {
+                left[i] = 1;
             }
         }
-        int sum = 1;
-        dp[minIndex] = 1;
-        //给minIndex左边的同学发糖果
-        for (int i = minIndex -1; i>=0; i--) {
+        right[n-1] = Math.max(1, left[n-1]);
+        for (int i = n-2; i>=0; i--) {
+            //如果当前孩子的分数比右边孩子高，那么必须保证right[i] = right[i+1] +1;
             if (ratings[i] > ratings[i+1]) {
-                dp[i] = dp[i+1] +1;
+                right[i] = right[i+1] + 1;
             } else {
-                dp[i] = 1;
+                right[i] = 1;
             }
-            sum +=dp[i];
         }
-
-        //给minIndex右边的同学发糖果
-        for (int i = minIndex +1; i< n; i++) {
-            if (ratings[i] > ratings[i-1]) {
-                dp[i] = dp[i-1] +1;
-            } else {
-                dp[i] = 1;
-            }
-            sum +=dp[i];
+        int sum = 0;
+        for (int i = 0; i< n;i ++) {
+            sum += Math.max(left[i], right[i]);
         }
         return sum;
     }
@@ -172,15 +148,22 @@ public class Test_0424 {
      * @return
      */
     public boolean wordBreak(String s, List<String> wordDict) {
-        if (s.equals("")) {
-            return true;
-        }
-        for (String sub : wordDict) {
-            if (s.startsWith(sub)) {
-                return wordBreak(s.substring(sub.length()), wordDict);
+        int n = s.length();
+        //dp[i]:是否存在子串s[0..i]
+        boolean[] dp = new boolean[n + 1];
+        dp[0] = true;
+        for (int i = 1; i <= n; i++) {
+            for (String w: wordDict) {
+                int len = w.length();
+                if (i >= len) {
+                    String sub = s.substring(i-len, i);
+                    if (sub.equals(w)) {
+                        dp[i] = dp[i-len]||dp[i];
+                    }
+                }
             }
         }
-        return false;
+        return dp[n];
     }
 
     /**
@@ -190,6 +173,9 @@ public class Test_0424 {
      * @return
      */
     public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
         //慢指针每次走一步
         ListNode slow = head;
         //快指针每次走两步
@@ -259,14 +245,28 @@ public class Test_0424 {
             }
         }
         //k1据A链尾的距离 = k1据B链尾的距离
-        while (k1 !=k2) {
+        while (k1 != null && k1 !=k2) {
             k1 = k1.next;
             k2 = k2.next;
         }
         return k1;
     }
 
-    //162
+    /**
+     * 162
+     * 如果我们从一个位置开始，不断地向高处走，那么最终一定可以到达一个峰值位置。
+     * 因此，我们首先在 [0,n) 的范围内随机一个初始位置 i,然后根据nums[i-1],nums[i],nums[i+1] 三者的关系决定往哪个方向走：
+     *  nums[i-1] < nums[i] > nums[i+1]，那么 i 就是峰值位置，直接返回即可
+     *  nums[i-1] < nums[i] < nums[i+1]，那么 往 i+1 的方向走
+     *  nums[i-1] > nums[i] > nums[i+1]，那么 往 i-1 的方向走
+     *  nums[i-1] > nums[i] < nums[i+1]，那么 往 i+1 或者 i-1 均可。
+     *
+     *  现在我们规定：
+     *  当 nums[i] < nums[i+1], 往 i+1 方向走
+     *  当 nums[i] > nums[i-1], 往 i-1 方向走
+     * @param nums
+     * @return
+     */
     public int findPeakElement(int[] nums) {
         int n = nums.length;
         int i = 0;
@@ -274,7 +274,7 @@ public class Test_0424 {
         int mid = 0;
         while (i <= j) {
             mid = (i + j)/ 2;
-            //nums[mid] < nums[mid +1] 满足的区间一定不是
+            //nums[mid] < nums[mid +1] ,往 i+1 方向走
            if (mid < n -1 && nums[mid] < nums[mid +1]) {
                i = mid +1;
            } else {
@@ -292,43 +292,50 @@ public class Test_0424 {
      * @return
      */
     public String fractionToDecimal(int numerator, int denominator) {
-        int r1 = numerator/denominator;
-        numerator = numerator % denominator;
         if (numerator == 0) {
-            return String.valueOf(r1);
+            return "0";
         }
-        numerator = numerator % denominator;
+        //计算符号
+        long sig = (numerator > 0 &&  denominator > 0) || (numerator < 0 &&  denominator < 0) ? 1L: -1L;
+        long n = Math.abs((long)numerator);
+        long d = Math.abs((long)denominator);
+        //计算整数部分
+        long r1 = n/d;
+        n = n % d;
+        //如果整除
+        if (n == 0) {
+            return String.valueOf((sig < 0 ? "-":"") +r1);
+        }
         //商列表
-        List<Integer> merchant = new ArrayList<>();
+        List<Long> merchant = new ArrayList<>();
         //key = 余数 ，value = 在小数中对应的位置(merchant)，从0开始
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Long, Integer> map = new HashMap<>();
 
         int k = -1;//循环所在的位置的下一个, -1表示不存在
-        while (numerator != 0) {
-            while (numerator * 10 < denominator) {
-                merchant.add(0);
-                numerator = numerator * 10;
-            }
-            numerator = numerator * 10;
-            if (map.get(numerator) != null) {
-                k = map.get(numerator);
+        while (n != 0) {
+            if (map.get(n) != null) {
+                k = map.get(n);
                 break;
             }
-
-            map.put(numerator, merchant.size());
-
-            int shang = numerator / denominator;
-            numerator = numerator % denominator;
+            map.put(n, merchant.size());
+            n = n * 10;
+            long shang =  n / d;
+            n = n % d;
             merchant.add(shang);
         }
-        StringBuilder result = new StringBuilder(r1 + ".");
+        StringBuilder result = null;
+        if (sig < 0) {
+            result = new StringBuilder("-" + r1 + ".");
+        } else {
+            result = new StringBuilder(r1 + ".");
+        }
         //如果存在循环
         if (k != -1) {
-            for (int i = 0 ; i< k-1; i++) {
+            for (int i = 0 ; k >= 1 && i<= k-1; i++) {
                 result.append(merchant.get(i));
             }
             result.append("(");
-            for (int i = k-1; i< merchant.size()-1; i++) {
+            for (int i = k; i< merchant.size(); i++) {
                 result.append(merchant.get(i));
             }
             result.append(")");
@@ -370,8 +377,8 @@ public class Test_0424 {
 
     public static void main(String[] args) {
         Test_0424 test_24 = new Test_0424();
-        //String s = "applepenapple";
-        //List<String> wordDIct = Arrays.asList(new String[]{"apple", "pen"});
+        //String s = "leetcode";
+        //List<String> wordDIct = Arrays.asList(new String[]{"leet", "code"});
         //boolean palindrome = test_24.isPalindrome(s);
         //int candy = test_24.candy(p);
         //int i = test_24.singleNumber(p);
@@ -380,8 +387,11 @@ public class Test_0424 {
 //        list.add(-2);
 //        list.add(0);
 //        list.add(-3);
-        int n1 = 2;
+        int n1 = 0;
         int n2 = 1;
+        int[] nm = {1,2,3,4};
+        //int peakElement = test_24.findPeakElement(nm);
+        String s = test_24.fractionToDecimal(n1, n2);
         //String s = test_24.fractionToDecimal(n1, n2);
         System.out.println();
     }
