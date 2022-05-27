@@ -83,36 +83,24 @@ public class Test_041819 {
 
     }
 
-    //7
+    /**
+     * 7
+     * https://leetcode.cn/problems/reverse-integer/solution/zheng-shu-fan-zhuan-by-leetcode-solution-bccn/
+     * @param x
+     * @return
+     */
     public int reverse(int x) {
-        int sig = 1;
-        if (x < 0) {
-            sig = -1;
-            x = -x;
-        }
-        int max = (int)(Math.pow(2,31)/10);
-        List<Integer> list = new ArrayList<>();
-        int y = x;
-        //反向记录余数
-        while (y > 0) {
-            int remainder = y % 10;
-            y = y / 10;
-            list.add(remainder);
-        }
-        y = 0;
-        //正向累加，同时判断是否溢出
-        for (int i = 0; i < list.size(); i++) {
-            //2的31次方的最高位为7
-            if (y > max || (y == max && i < list.size()-1 && list.get(i+1) >= 7)) {
-                y = 0;
-                break;
+        int rev = 0;
+        //因为x可能为负数，所以循环跳出的条件是x !=0
+        while (x != 0) {
+            if (rev < Integer.MIN_VALUE /10 || rev > Integer.MAX_VALUE / 10) {
+                return 0;
             }
-
-            y = y * 10 + list.get(i);
+            int digit = x % 10;
+            rev = rev * 10 + digit;
+            x = x/10;
         }
-
-        y = y * sig;
-        return y;
+        return rev;
     }
 
     /**
@@ -340,47 +328,118 @@ public class Test_041819 {
         return -1;
     }
 
-    //29
+    /**
+     * 29
+     * https://leetcode.cn/problems/divide-two-integers/solution/liang-shu-xiang-chu-by-leetcode-solution-5hic/
+     *  首先边界处理
+     *  然后符号处理
+     *  然后使用快速乘判断
+     * @param dividend
+     * @param divisor
+     * @return
+     */
     public int divide(int dividend, int divisor) {
-        if((dividend==Integer.MIN_VALUE && divisor==-1)|| divisor==0)
-            return Integer.MAX_VALUE;
-
-        // 当传入的int值为Integer.MIN_VALUE时,Math.abs(Integer.MIN_VALUE)=Integer.MAX_VALUE + 1;
-        long m = dividend;
-        long n = divisor;
+        //边界处理
+        //考虑被除数为最小值的情况
         if (dividend == Integer.MIN_VALUE) {
-            //todo + 1L,不能 + 1(+1表示int类型相加)
-            m = Integer.MAX_VALUE + 1L;
-        } else {
-            m = Math.abs(dividend);
-        }
-        if (divisor == Integer.MIN_VALUE) {
-            n = Integer.MAX_VALUE + 1L;
-        } else {
-            n = Math.abs(divisor);
-        }
-
-        int sig = (dividend > 0) ^ (divisor > 0) ? -1: 1;
-        if (n == 1) {
-            return (int)(sig * m);
-        }
-        long res = 0;
-        while (m >= n) {
-            long t = n;
-            long p = 1;
-            while (m >= (t<<1)) {
-                t = t << 1;
-                p = p <<1;
+            if (divisor == 1) {
+                return Integer.MIN_VALUE;
             }
-
-            res += p;
-            m = m - t;
+            //结果溢出，根据题意，返回Integer的最大值
+            if (divisor == -1) {
+                return Integer.MAX_VALUE;
+            }
         }
-        return (int)(res*sig);
+
+        //考虑除数为最小值的情况
+        if (divisor == Integer.MIN_VALUE) {
+            return dividend == Integer.MIN_VALUE ? 1: 0;
+        }
+
+        //考虑被除数为 0 的情况
+        if (dividend == 0) {
+            return 0;
+        }
+
+        /**
+         * todo 这里将除数与被除数变的同号。便于计算
+         * 之所以将被除数与除数都变成负数，是因为，如果存在某个数为Integer.MIN_VALUE时，其相反数溢出32位。
+         * 因此变成负数不会溢出
+         */
+        boolean negative = false;
+        if (dividend > 0) {
+            negative = !negative;
+            dividend = -dividend;
+        }
+        if (divisor > 0) {
+            negative = !negative;
+            divisor = - divisor;
+        }
+        //由于z >=0，且为32位整数，因此先从[1, -dividend]开始找。如果找不到，那么 z 必然为0
+        int left = 1;
+        int right = dividend == Integer.MIN_VALUE ? Integer.MAX_VALUE: -dividend;
+        int ans = 0;
+        while (left <= right) {
+            //注意溢出，并且不能使用除法.todo 这里右移运算优先级较低，因此需要将整个右移包括起来
+            int mid = left + ((right - left) >> 1);
+            //首先判断 z * y >= x是否满足
+            boolean match = checkQuickAdd(mid, divisor, dividend);
+            if (match) {
+                ans = mid;
+                //注意溢出。当mid为最大值时，不能再左移
+                if (mid == Integer.MAX_VALUE) {
+                    break;
+                }
+
+                left = mid + 1;
+            } else {
+                right = mid -1;
+            }
+        }
+
+        return negative ? -ans: ans;
     }
 
     /**
-     * todo 【重点】快速加计算 x + y
+     * 返回 z* y >= x是否成立
+     * 其中 z >= 0, y < 0, x < 0
+     * @param z
+     * @param y
+     * @param x
+     * @return
+     */
+    public boolean checkQuickAdd(int z, int y, int x) {
+        int res = 0;
+        while (z != 0) {
+            if ((z & 1) == 1) {
+                /**
+                 * 为了保证 res + y >= x
+                 * 由于res + y 可能为溢出，因此将上式等价变成
+                 * 保证 res >= x - y
+                 */
+                if (res < x - y) {
+                    return false;
+                }
+               res = res + y;
+            }
+            /**
+             * 如果还可以继续累加时，还需要保证 y + y > x
+             * 这是因为 y 为负数，越加越小。如果当前累加的值已经小于 x，那么继续累加后的值必然比 x 更小
+             * 那么 (z+1) * y <= x，不满足条件
+             */
+            if (z > 1) {
+                if (y < x - y) {
+                    return false;
+                }
+            }
+            y = y + y;
+            z = z >> 1;
+        }
+        return true;
+    }
+
+    /**
+     * todo 【重点】快速加计算 x * y
      * @param x
      * @param y
      * @return
@@ -481,25 +540,25 @@ public class Test_041819 {
         String s = "a";
         String t1 = "a";
         //int i = t.lengthOfLongestSubstring(s);
-        //int x = 0;
-        //int reverse = t.reverse(x);
+        int x = -123;
+       // int reverse = t.reverse(x);
         //int i = t.myAtoi(s);
         //String[] strs = {"flower","flower","flower","flower"};
-        int[] nums = {5,7,7,8,8,10};
+        //int[] nums = {5,7,7,8,8,10};
         //List<List<Integer>> lists = t.threeSum(nums);
 
         //boolean valid = t.isValid(s);
         //int i = t.strStr(s, t1);
-        //int divide = t.divide(-2147483648, -1);
+        int divide = t.divide(-10, -3);
 
         //int i = t.quickAdd(5, 53);
-        int x = 6;
+        //int x = 6;
         int y = -3;
         int z = 4;
         //int divide = t.divide(-2147483648, 2);
         //int target = 7;
         //int search = t.search(nums, x);
-        int[] ints = t.searchRange(nums, x);
+        //int[] ints = t.searchRange(nums, x);
         System.out.println();
     }
 }

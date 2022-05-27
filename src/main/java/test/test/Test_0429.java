@@ -134,11 +134,7 @@ public class Test_0429 {
         return minDiff;
     }
 
-    //714 todo
-    public int maxProfit(int[] prices, int fee) {
 
-        return 0;
-    }
 
     public static void main(String[] args) {
         Test_0429 test_0429 = new Test_0429();

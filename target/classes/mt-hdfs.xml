@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more       -->
+<!-- contributor license agreements.  See the NOTICE file distributed with    -->
+<!-- this work for additional information regarding copyright ownership.      -->
+<!-- The ASF licenses this file to You under the Apache License, Version 2.0  -->
+<!-- (the "License"); you may not use this file except in compliance with     -->
+<!-- the License.  You may obtain a copy of the License at                    -->
+<!--                                                                          -->
+<!--     http://www.apache.org/licenses/LICENSE-2.0                           -->
+<!--                                                                          -->
+<!-- Unless required by applicable law or agreed to in writing, software      -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS,        -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and      -->
+<!-- limitations under the License.                                           -->
+
+<configuration>
+
+    <!-- HA -->
+
+    <property>
+        <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.nameservices</name>
+        <value>ha-nn-uri,realtime,index,feeds,sanbox-hdfs</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.namenodes.ha-nn-uri</name>
+        <value>nn1,nn2</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.ha-nn-uri.nn1</name>
+        <value>ip-10-83-60-0.ap-south-1.compute.internal:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.http-address.ha-nn-uri.nn1</name>
+        <value>ip-10-83-60-0.ap-south-1.compute.internal:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.namenodes.sanbox-hdfs</name>
+        <value>sanbox-nn1</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.sanbox-hdfs.sanbox-nn1</name>
+        <value>ip-10-83-15-154.ap-south-1.compute.internal:50070/</value>
+    </property>
+
+
+    <property>
+        <name>dfs.namenode.https-address.ha-nn-uri.nn1</name>
+        <value>ip-10-83-60-0.ap-south-1.compute.internal:50470</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.ha-nn-uri.nn2</name>
+        <value>ip-10-83-51-74.ap-south-1.compute.internal:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.http-address.ha-nn-uri.nn2</name>
+        <value>ip-10-83-51-74.ap-south-1.compute.internal:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.https-address.ha-nn-uri.nn2</name>
+        <value>ip-10-83-51-74.ap-south-1.compute.internal:50470</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.shared.edits.dir</name>
+        <value>qjournal://ip-10-83-60-0.ap-south-1.compute.internal:8485;ip-10-83-51-74.ap-south-1.compute.internal:8485;ip-10-83-59-185.ap-south-1.compute.internal:8485/ha-nn-uri</value>
+    </property>
+
+    <property>
+        <name>dfs.client.failover.proxy.provider.ha-nn-uri</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.fencing.methods</name>
+        <value>shell(/bin/true)</value>
+    </property>
+
+
+
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///mnt/hdfs,file:///mnt1/hdfs</value>
+    </property>
+
+
+
+
+
+
+
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///mnt/namenode,file:///mnt1/namenode</value>
+    </property>
+
+    <property>
+        <name>dfs.permissions.superusergroup</name>
+        <value>hdfsadmingroup</value>
+        <description>The name of the group of super-users.</description>
+    </property>
+
+    <!-- Enable Hue plugins -->
+    <property>
+        <name>dfs.namenode.plugins</name>
+        <value></value>
+        <description>Comma-separated list of namenode plug-ins to be activated.
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.datanode.plugins</name>
+        <value></value>
+        <description>Comma-separated list of datanode plug-ins to be activated.
+        </description>
+    </property>
+
+    <!-- increase the number of datanode transceivers way above the default of 256
+       - this is for hbase -->
+    <property>
+        <name>dfs.datanode.max.xcievers</name>
+        <value>4096</value>
+    </property>
+
+    <!-- Configurations for large cluster -->
+    <property>
+        <name>dfs.webhdfs.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.edits.dir</name>
+        <value>/mnt/journalnode</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.rpc-address</name>
+        <value>0.0.0.0:8485</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.http-address</name>
+        <value>0.0.0.0:8480</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.https-address</name>
+        <value>0.0.0.0:8481</value>
+    </property>
+
+    <property>
+        <name>dfs.hosts.exclude</name>
+        <value>/emr/instance-controller/lib/dfs.hosts.exclude</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.safemode.extension</name>
+        <value>5000</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.replication.max-streams</name>
+        <value>20</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.replication.max-streams-hard-limit</name>
+        <value>40</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.replication.work.multiplier.per.iteration</name>
+        <value>10</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.available-space-volume-choosing-policy.balanced-space-preference-fraction</name>
+        <value>1.0</value>
+    </property>
+
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.available-space-volume-choosing-policy.balanced-space-threshold</name>
+        <value>10737418240</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.du.reserved</name>
+        <value>536870912</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.fsdataset.volume.choosing.policy</name>
+        <value>org.apache.hadoop.hdfs.server.datanode.fsdataset.AvailableSpaceVolumeChoosingPolicy</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.handler.count</name>
+        <value>64</value>
+    </property>
+
+    <property>
+        <name>dfs.name.dir</name>
+        <value>/mnt/namenode,/mnt1/namenode</value>
+    </property>
+
+    <property>
+        <name>dfs.data.dir</name>
+        <value>/mnt/hdfs,/mnt1/hdfs</value>
+    </property>
+    <property>
+        <name>dfs.ha.namenodes.index</name>
+        <value>nn_index_1,nn_index_2</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.index.nn_index_1 </name>
+        <value>ip-10-83-52-248.ap-south-1.compute.internal:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.index.nn_index_2 </name>
+        <value>ip-10-83-51-207.ap-south-1.compute.internal:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.namenodes.realtime</name>
+        <value>nn_realtime_1,nn_realtime_2</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.realtime.nn_realtime_1 </name>
+        <value>ip-10-83-60-0.ap-south-1.compute.internal:8020</value>
+    </property>
+
+
+    <property>
+        <name>dfs.namenode.rpc-address.realtime.nn_realtime_2 </name>
+        <value>ip-10-83-51-74.ap-south-1.compute.internal:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.namenodes.feeds</name>
+        <value>nn_feeds_1,nn_feeds_2</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.feeds.nn_feeds_1</name>
+        <value>ip-10-83-50-229.ap-south-1.compute.internal:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.feeds.nn_feeds_2</name>
+        <value>ip-10-83-59-171.ap-south-1.compute.internal:8020</value>
+    </property>
+    <property>
+        <name>dfs.client.failover.proxy.provider.realtime</name>
+        <value> org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+    <property>
+        <name>dfs.client.failover.proxy.provider.index</name>
+        <value> org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+    <property>
+        <name>dfs.client.failover.proxy.provider.feeds</name>
+        <value> org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+
+</configuration>

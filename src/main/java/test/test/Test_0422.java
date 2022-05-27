@@ -11,46 +11,20 @@ public class Test_0422 {
     //91
     public int numDecodings(String s) {
         int n = s.length();
-        if (s.charAt(0) == '0') {
-            return 0;
-        }
-        //dp[i]表示s[0...i]的解码方式
-        int[] dp = new int[n];
-        //第一个字符一定不为0，那么dp[0] = 1;
-        dp[0] = 1;
-        //todo
-        if (s.length() >= 2) {
-            //30
-            if (s.charAt(1) == '0' && Integer.parseInt(s.substring(0, 2))> 26) {
-                return 0;
+        int[] f = new int[n + 1];
+        //空字符串可以有 1 种解码方法，解码出一个空字符串。
+        f[0] = 1;
+        for (int i = 1; i <= n; ++i) {
+            //如果当前字符s[i-1]不为0，那么一定有解法s[0,,i-2],s[i-1]
+            if (s.charAt(i - 1) != '0') {
+                f[i] += f[i - 1];
             }
-            //20 33
-            if(s.charAt(1) == '0' || Integer.parseInt(s.substring(0, 2))> 26)     {
-                dp[1] = 1;
-            } else {
-                dp[1] = 2;
+            //如果前一个字符不为0，字符串s[i-2,i-1] <= 26，那么还存在解法 s[0...i-3],s[i-2,i-1]
+            if (i > 1 && s.charAt(i - 2) != '0' && ((s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') <= 26)) {
+                f[i] += f[i - 2];
             }
         }
-
-        for (int i = 2; i < n; i++) {
-            //如果s[i]为0，且s[i-1,i] <=26 ,那么s[i]只能由s[i-2] + s[i-1,i]组合而成
-            if (s.charAt(i) == '0') {
-                //如果出现连续的0，直接返回0.如果该数>26，也直接返回0
-                if (s.charAt(i - 1) == '0' || Integer.parseInt(s.substring(i - 1, i + 1)) > 26) {
-                    return 0;
-                }
-                dp[i] = dp[i - 2];
-            } else {
-                //如果s[i]不为0，首先s[i]可以由s[i-1] + s[i]组合而成
-                dp[i] = dp[i - 1];
-                //如果s[i-1]不为0，且s[i-1,i] <=26，那么s[i]还可以由s[i-2] + s[i-1,i]组合而成
-                if (s.charAt(i - 1) != '0' && Integer.parseInt(s.substring(i - 1, i + 1)) <= 26) {
-                    dp[i] += dp[i - 2];
-                }
-            }
-        }
-
-        return dp[n - 1];
+        return f[n];
     }
 
     //108

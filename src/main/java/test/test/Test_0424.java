@@ -263,7 +263,7 @@ public class Test_0424 {
      *
      *  现在我们规定：
      *  当 nums[i] < nums[i+1], 往 i+1 方向走
-     *  当 nums[i] > nums[i-1], 往 i-1 方向走
+     *  当 nums[i] > nums[i+1], 往 i-1 方向走
      * @param nums
      * @return
      */

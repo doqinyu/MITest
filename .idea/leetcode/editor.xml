@@ -7,8 +7,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[101]对称二叉树.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com101" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn101" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[101]对称二叉树.java" />
               <option name="titleSlug" value="symmetric-tree" />
             </LeetcodeEditor>
@@ -18,8 +18,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[102]二叉树的层序遍历.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com102" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn102" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[102]二叉树的层序遍历.java" />
               <option name="titleSlug" value="binary-tree-level-order-traversal" />
             </LeetcodeEditor>
@@ -29,8 +29,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[103]二叉树的锯齿形层序遍历.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com103" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn103" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[103]二叉树的锯齿形层序遍历.java" />
               <option name="titleSlug" value="binary-tree-zigzag-level-order-traversal" />
             </LeetcodeEditor>
@@ -40,8 +40,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[104]二叉树的最大深度.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com104" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn104" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[104]二叉树的最大深度.java" />
               <option name="titleSlug" value="maximum-depth-of-binary-tree" />
             </LeetcodeEditor>
@@ -51,8 +51,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[105]从前序与中序遍历序列构造二叉树.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com105" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn105" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[105]从前序与中序遍历序列构造二叉树.java" />
               <option name="titleSlug" value="construct-binary-tree-from-preorder-and-inorder-traversal" />
             </LeetcodeEditor>
@@ -62,8 +62,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[108]将有序数组转换为二叉搜索树.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com108" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn108" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[108]将有序数组转换为二叉搜索树.java" />
               <option name="titleSlug" value="convert-sorted-array-to-binary-search-tree" />
             </LeetcodeEditor>
@@ -73,8 +73,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[116]填充每个节点的下一个右侧节点指针.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com116" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn116" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[116]填充每个节点的下一个右侧节点指针.java" />
               <option name="titleSlug" value="populating-next-right-pointers-in-each-node" />
             </LeetcodeEditor>
@@ -84,8 +84,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[118]杨辉三角.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com118" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn118" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[118]杨辉三角.java" />
               <option name="titleSlug" value="pascals-triangle" />
             </LeetcodeEditor>
@@ -95,8 +95,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[11]盛最多水的容器.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com11" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn11" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[11]盛最多水的容器.java" />
               <option name="titleSlug" value="container-with-most-water" />
             </LeetcodeEditor>
@@ -106,8 +106,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[121]买卖股票的最佳时机.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com121" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn121" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[121]买卖股票的最佳时机.java" />
               <option name="titleSlug" value="best-time-to-buy-and-sell-stock" />
             </LeetcodeEditor>
@@ -117,8 +117,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[122]买卖股票的最佳时机 II.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com122" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn122" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[122]买卖股票的最佳时机 II.java" />
               <option name="titleSlug" value="best-time-to-buy-and-sell-stock-ii" />
             </LeetcodeEditor>
@@ -128,8 +128,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[125]验证回文串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com125" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn125" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[125]验证回文串.java" />
               <option name="titleSlug" value="valid-palindrome" />
             </LeetcodeEditor>
@@ -139,8 +139,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[135]分发糖果.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com135" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn135" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[135]分发糖果.java" />
               <option name="titleSlug" value="candy" />
             </LeetcodeEditor>
@@ -150,8 +150,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[136]只出现一次的数字.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com136" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn136" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[136]只出现一次的数字.java" />
               <option name="titleSlug" value="single-number" />
             </LeetcodeEditor>
@@ -161,8 +161,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[139]单词拆分.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com139" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn139" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[139]单词拆分.java" />
               <option name="titleSlug" value="word-break" />
             </LeetcodeEditor>
@@ -172,8 +172,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[13]罗马数字转整数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com13" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn13" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[13]罗马数字转整数.java" />
               <option name="titleSlug" value="roman-to-integer" />
             </LeetcodeEditor>
@@ -183,8 +183,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[141]环形链表.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com141" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn141" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[141]环形链表.java" />
               <option name="titleSlug" value="linked-list-cycle" />
             </LeetcodeEditor>
@@ -194,8 +194,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[14]最长公共前缀.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com14" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn14" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[14]最长公共前缀.java" />
               <option name="titleSlug" value="longest-common-prefix" />
             </LeetcodeEditor>
@@ -205,8 +205,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[150]逆波兰表达式求值.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com150" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn150" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[150]逆波兰表达式求值.java" />
               <option name="titleSlug" value="evaluate-reverse-polish-notation" />
             </LeetcodeEditor>
@@ -216,8 +216,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[155]最小栈.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com155" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn155" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[155]最小栈.java" />
               <option name="titleSlug" value="min-stack" />
             </LeetcodeEditor>
@@ -227,8 +227,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[15]三数之和.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com15" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn15" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[15]三数之和.java" />
               <option name="titleSlug" value="3sum" />
             </LeetcodeEditor>
@@ -238,8 +238,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[160]相交链表.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com160" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn160" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[160]相交链表.java" />
               <option name="titleSlug" value="intersection-of-two-linked-lists" />
             </LeetcodeEditor>
@@ -249,8 +249,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[162]寻找峰值.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com162" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn162" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[162]寻找峰值.java" />
               <option name="titleSlug" value="find-peak-element" />
             </LeetcodeEditor>
@@ -260,8 +260,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[166]分数到小数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com166" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn166" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[166]分数到小数.java" />
               <option name="titleSlug" value="fraction-to-recurring-decimal" />
             </LeetcodeEditor>
@@ -271,8 +271,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[169]多数元素.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com169" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn169" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[169]多数元素.java" />
               <option name="titleSlug" value="majority-element" />
             </LeetcodeEditor>
@@ -282,8 +282,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[171]Excel 表列序号.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com171" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn171" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[171]Excel 表列序号.java" />
               <option name="titleSlug" value="excel-sheet-column-number" />
             </LeetcodeEditor>
@@ -293,8 +293,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[172]阶乘后的零.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com172" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn172" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[172]阶乘后的零.java" />
               <option name="titleSlug" value="factorial-trailing-zeroes" />
             </LeetcodeEditor>
@@ -304,8 +304,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[17]电话号码的字母组合.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com17" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn17" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[17]电话号码的字母组合.java" />
               <option name="titleSlug" value="letter-combinations-of-a-phone-number" />
             </LeetcodeEditor>
@@ -315,8 +315,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[188]买卖股票的最佳时机 IV.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com188" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn188" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[188]买卖股票的最佳时机 IV.java" />
               <option name="titleSlug" value="best-time-to-buy-and-sell-stock-iv" />
             </LeetcodeEditor>
@@ -326,8 +326,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[189]轮转数组.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com189" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn189" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[189]轮转数组.java" />
               <option name="titleSlug" value="rotate-array" />
             </LeetcodeEditor>
@@ -337,8 +337,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[190]颠倒二进制位.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com190" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn190" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[190]颠倒二进制位.java" />
               <option name="titleSlug" value="reverse-bits" />
             </LeetcodeEditor>
@@ -348,8 +348,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[191]位1的个数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com191" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn191" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[191]位1的个数.java" />
               <option name="titleSlug" value="number-of-1-bits" />
             </LeetcodeEditor>
@@ -359,8 +359,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[198]打家劫舍.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com198" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn198" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[198]打家劫舍.java" />
               <option name="titleSlug" value="house-robber" />
             </LeetcodeEditor>
@@ -370,8 +370,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[19]删除链表的倒数第 N 个结点.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com19" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn19" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[19]删除链表的倒数第 N 个结点.java" />
               <option name="titleSlug" value="remove-nth-node-from-end-of-list" />
             </LeetcodeEditor>
@@ -381,8 +381,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[1]两数之和.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com1" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn1" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1]两数之和.java" />
               <option name="titleSlug" value="two-sum" />
             </LeetcodeEditor>
@@ -392,8 +392,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[200]岛屿数量.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com200" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn200" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[200]岛屿数量.java" />
               <option name="titleSlug" value="number-of-islands" />
             </LeetcodeEditor>
@@ -403,8 +403,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[202]快乐数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com202" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn202" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[202]快乐数.java" />
               <option name="titleSlug" value="happy-number" />
             </LeetcodeEditor>
@@ -414,8 +414,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[204]计数质数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com204" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn204" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[204]计数质数.java" />
               <option name="titleSlug" value="count-primes" />
             </LeetcodeEditor>
@@ -425,8 +425,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[205]同构字符串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com205" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn205" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[205]同构字符串.java" />
               <option name="titleSlug" value="isomorphic-strings" />
             </LeetcodeEditor>
@@ -436,8 +436,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[206]反转链表.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com206" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn206" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[206]反转链表.java" />
               <option name="titleSlug" value="reverse-linked-list" />
             </LeetcodeEditor>
@@ -447,8 +447,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[20]有效的括号.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com20" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn20" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[20]有效的括号.java" />
               <option name="titleSlug" value="valid-parentheses" />
             </LeetcodeEditor>
@@ -458,8 +458,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[213]打家劫舍 II.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com213" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn213" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[213]打家劫舍 II.java" />
               <option name="titleSlug" value="house-robber-ii" />
             </LeetcodeEditor>
@@ -469,8 +469,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[215]数组中的第K个最大元素.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com215" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn215" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[215]数组中的第K个最大元素.java" />
               <option name="titleSlug" value="kth-largest-element-in-an-array" />
             </LeetcodeEditor>
@@ -480,8 +480,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[217]存在重复元素.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com217" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn217" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[217]存在重复元素.java" />
               <option name="titleSlug" value="contains-duplicate" />
             </LeetcodeEditor>
@@ -491,8 +491,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[21]合并两个有序链表.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com21" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn21" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[21]合并两个有序链表.java" />
               <option name="titleSlug" value="merge-two-sorted-lists" />
             </LeetcodeEditor>
@@ -502,8 +502,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[22]括号生成.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com22" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn22" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[22]括号生成.java" />
               <option name="titleSlug" value="generate-parentheses" />
             </LeetcodeEditor>
@@ -513,8 +513,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[230]二叉搜索树中第K小的元素.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com230" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn230" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[230]二叉搜索树中第K小的元素.java" />
               <option name="titleSlug" value="kth-smallest-element-in-a-bst" />
             </LeetcodeEditor>
@@ -524,8 +524,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[232]用栈实现队列.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com232" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn232" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[232]用栈实现队列.java" />
               <option name="titleSlug" value="implement-queue-using-stacks" />
             </LeetcodeEditor>
@@ -535,8 +535,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[234]回文链表.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com234" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn234" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[234]回文链表.java" />
               <option name="titleSlug" value="palindrome-linked-list" />
             </LeetcodeEditor>
@@ -546,8 +546,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[237]删除链表中的节点.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com237" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn237" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[237]删除链表中的节点.java" />
               <option name="titleSlug" value="delete-node-in-a-linked-list" />
             </LeetcodeEditor>
@@ -557,8 +557,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[240]搜索二维矩阵 II.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com240" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn240" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[240]搜索二维矩阵 II.java" />
               <option name="titleSlug" value="search-a-2d-matrix-ii" />
             </LeetcodeEditor>
@@ -568,8 +568,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[242]有效的字母异位词.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com242" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn242" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[242]有效的字母异位词.java" />
               <option name="titleSlug" value="valid-anagram" />
             </LeetcodeEditor>
@@ -579,8 +579,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[268]丢失的数字.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com268" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn268" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[268]丢失的数字.java" />
               <option name="titleSlug" value="missing-number" />
             </LeetcodeEditor>
@@ -590,8 +590,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[26]删除有序数组中的重复项.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com26" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn26" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[26]删除有序数组中的重复项.java" />
               <option name="titleSlug" value="remove-duplicates-from-sorted-array" />
             </LeetcodeEditor>
@@ -601,8 +601,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[278]第一个错误的版本.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com278" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn278" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[278]第一个错误的版本.java" />
               <option name="titleSlug" value="first-bad-version" />
             </LeetcodeEditor>
@@ -612,8 +612,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[279]完全平方数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com279" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn279" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[279]完全平方数.java" />
               <option name="titleSlug" value="perfect-squares" />
             </LeetcodeEditor>
@@ -623,8 +623,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[283]移动零.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com283" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn283" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[283]移动零.java" />
               <option name="titleSlug" value="move-zeroes" />
             </LeetcodeEditor>
@@ -634,8 +634,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[287]寻找重复数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com287" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn287" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[287]寻找重复数.java" />
               <option name="titleSlug" value="find-the-duplicate-number" />
             </LeetcodeEditor>
@@ -645,8 +645,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[28]实现 strStr().md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com28" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn28" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[28]实现 strStr().java" />
               <option name="titleSlug" value="implement-strstr" />
             </LeetcodeEditor>
@@ -656,8 +656,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[297]二叉树的序列化与反序列化.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com297" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn297" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[297]二叉树的序列化与反序列化.java" />
               <option name="titleSlug" value="serialize-and-deserialize-binary-tree" />
             </LeetcodeEditor>
@@ -667,8 +667,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[29]两数相除.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com29" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn29" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[29]两数相除.java" />
               <option name="titleSlug" value="divide-two-integers" />
             </LeetcodeEditor>
@@ -678,8 +678,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[2]两数相加.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com2" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn2" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[2]两数相加.java" />
               <option name="titleSlug" value="add-two-numbers" />
             </LeetcodeEditor>
@@ -689,8 +689,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[300]最长递增子序列.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com300" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn300" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[300]最长递增子序列.java" />
               <option name="titleSlug" value="longest-increasing-subsequence" />
             </LeetcodeEditor>
@@ -700,8 +700,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[322]零钱兑换.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com322" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn322" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[322]零钱兑换.java" />
               <option name="titleSlug" value="coin-change" />
             </LeetcodeEditor>
@@ -711,8 +711,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[326]3 的幂.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com326" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn326" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[326]3 的幂.java" />
               <option name="titleSlug" value="power-of-three" />
             </LeetcodeEditor>
@@ -722,8 +722,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[328]奇偶链表.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com328" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn328" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[328]奇偶链表.java" />
               <option name="titleSlug" value="odd-even-linked-list" />
             </LeetcodeEditor>
@@ -733,8 +733,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[334]递增的三元子序列.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com334" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn334" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[334]递增的三元子序列.java" />
               <option name="titleSlug" value="increasing-triplet-subsequence" />
             </LeetcodeEditor>
@@ -744,8 +744,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[33]搜索旋转排序数组.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com33" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn33" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[33]搜索旋转排序数组.java" />
               <option name="titleSlug" value="search-in-rotated-sorted-array" />
             </LeetcodeEditor>
@@ -755,8 +755,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[344]反转字符串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com344" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn344" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[344]反转字符串.java" />
               <option name="titleSlug" value="reverse-string" />
             </LeetcodeEditor>
@@ -766,8 +766,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[347]前 K 个高频元素.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com347" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn347" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[347]前 K 个高频元素.java" />
               <option name="titleSlug" value="top-k-frequent-elements" />
             </LeetcodeEditor>
@@ -777,8 +777,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[34]在排序数组中查找元素的第一个和最后一个位置.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com34" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn34" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[34]在排序数组中查找元素的第一个和最后一个位置.java" />
               <option name="titleSlug" value="find-first-and-last-position-of-element-in-sorted-array" />
             </LeetcodeEditor>
@@ -788,8 +788,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[350]两个数组的交集 II.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com350" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn350" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[350]两个数组的交集 II.java" />
               <option name="titleSlug" value="intersection-of-two-arrays-ii" />
             </LeetcodeEditor>
@@ -799,8 +799,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[36]有效的数独.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com36" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn36" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[36]有效的数独.java" />
               <option name="titleSlug" value="valid-sudoku" />
             </LeetcodeEditor>
@@ -810,8 +810,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[371]两整数之和.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com371" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn371" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[371]两整数之和.java" />
               <option name="titleSlug" value="sum-of-two-integers" />
             </LeetcodeEditor>
@@ -821,8 +821,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[378]有序矩阵中第 K 小的元素.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com378" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn378" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[378]有序矩阵中第 K 小的元素.java" />
               <option name="titleSlug" value="kth-smallest-element-in-a-sorted-matrix" />
             </LeetcodeEditor>
@@ -832,8 +832,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[380]O(1) 时间插入、删除和获取随机元素.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com380" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn380" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[380]O(1) 时间插入、删除和获取随机元素.java" />
               <option name="titleSlug" value="insert-delete-getrandom-o1" />
             </LeetcodeEditor>
@@ -843,8 +843,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[384]打乱数组.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com384" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn384" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[384]打乱数组.java" />
               <option name="titleSlug" value="shuffle-an-array" />
             </LeetcodeEditor>
@@ -854,8 +854,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[387]字符串中的第一个唯一字符.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com387" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn387" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[387]字符串中的第一个唯一字符.java" />
               <option name="titleSlug" value="first-unique-character-in-a-string" />
             </LeetcodeEditor>
@@ -865,8 +865,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[38]外观数列.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com38" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn38" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[38]外观数列.java" />
               <option name="titleSlug" value="count-and-say" />
             </LeetcodeEditor>
@@ -876,8 +876,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[3]无重复字符的最长子串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com3" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn3" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[3]无重复字符的最长子串.java" />
               <option name="titleSlug" value="longest-substring-without-repeating-characters" />
             </LeetcodeEditor>
@@ -887,8 +887,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[409]最长回文串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com409" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn409" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[409]最长回文串.java" />
               <option name="titleSlug" value="longest-palindrome" />
             </LeetcodeEditor>
@@ -898,8 +898,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[412]Fizz Buzz.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com412" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn412" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[412]Fizz Buzz.java" />
               <option name="titleSlug" value="fizz-buzz" />
             </LeetcodeEditor>
@@ -909,8 +909,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[416]分割等和子集.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com416" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn416" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[416]分割等和子集.java" />
               <option name="titleSlug" value="partition-equal-subset-sum" />
             </LeetcodeEditor>
@@ -920,8 +920,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[442]数组中重复的数据.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com442" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn442" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[442]数组中重复的数据.java" />
               <option name="titleSlug" value="find-all-duplicates-in-an-array" />
             </LeetcodeEditor>
@@ -931,8 +931,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[461]汉明距离.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com461" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn461" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[461]汉明距离.java" />
               <option name="titleSlug" value="hamming-distance" />
             </LeetcodeEditor>
@@ -942,8 +942,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[46]全排列.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com46" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn46" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[46]全排列.java" />
               <option name="titleSlug" value="permutations" />
             </LeetcodeEditor>
@@ -953,8 +953,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[485]最大连续 1 的个数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com485" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn485" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[485]最大连续 1 的个数.java" />
               <option name="titleSlug" value="max-consecutive-ones" />
             </LeetcodeEditor>
@@ -964,8 +964,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[48]旋转图像.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com48" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn48" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[48]旋转图像.java" />
               <option name="titleSlug" value="rotate-image" />
             </LeetcodeEditor>
@@ -975,8 +975,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[49]字母异位词分组.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com49" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn49" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[49]字母异位词分组.java" />
               <option name="titleSlug" value="group-anagrams" />
             </LeetcodeEditor>
@@ -986,8 +986,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[50]Pow(x, n).md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com50" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn50" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[50]Pow(x, n).java" />
               <option name="titleSlug" value="powx-n" />
             </LeetcodeEditor>
@@ -997,8 +997,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[53]最大子数组和.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com53" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn53" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[53]最大子数组和.java" />
               <option name="titleSlug" value="maximum-subarray" />
             </LeetcodeEditor>
@@ -1008,8 +1008,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[55]跳跃游戏.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com55" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn55" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[55]跳跃游戏.java" />
               <option name="titleSlug" value="jump-game" />
             </LeetcodeEditor>
@@ -1019,8 +1019,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[565]数组嵌套.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com565" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn565" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[565]数组嵌套.java" />
               <option name="titleSlug" value="array-nesting" />
             </LeetcodeEditor>
@@ -1030,8 +1030,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[566]重塑矩阵.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com566" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn566" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[566]重塑矩阵.java" />
               <option name="titleSlug" value="reshape-the-matrix" />
             </LeetcodeEditor>
@@ -1041,8 +1041,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[56]合并区间.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com56" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn56" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[56]合并区间.java" />
               <option name="titleSlug" value="merge-intervals" />
             </LeetcodeEditor>
@@ -1052,8 +1052,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[583]两个字符串的删除操作.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com583" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn583" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[583]两个字符串的删除操作.java" />
               <option name="titleSlug" value="delete-operation-for-two-strings" />
             </LeetcodeEditor>
@@ -1063,8 +1063,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[5]最长回文子串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com5" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn5" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[5]最长回文子串.java" />
               <option name="titleSlug" value="longest-palindromic-substring" />
             </LeetcodeEditor>
@@ -1074,8 +1074,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[621]任务调度器.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com621" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn621" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[621]任务调度器.java" />
               <option name="titleSlug" value="task-scheduler" />
             </LeetcodeEditor>
@@ -1085,8 +1085,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[62]不同路径.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com62" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn62" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[62]不同路径.java" />
               <option name="titleSlug" value="unique-paths" />
             </LeetcodeEditor>
@@ -1096,8 +1096,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[645]错误的集合.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com645" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn645" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[645]错误的集合.java" />
               <option name="titleSlug" value="set-mismatch" />
             </LeetcodeEditor>
@@ -1107,8 +1107,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[647]回文子串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com647" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn647" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[647]回文子串.java" />
               <option name="titleSlug" value="palindromic-substrings" />
             </LeetcodeEditor>
@@ -1118,8 +1118,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[667]优美的排列 II.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com667" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn667" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[667]优美的排列 II.java" />
               <option name="titleSlug" value="beautiful-arrangement-ii" />
             </LeetcodeEditor>
@@ -1129,8 +1129,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[66]加一.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com66" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn66" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[66]加一.java" />
               <option name="titleSlug" value="plus-one" />
             </LeetcodeEditor>
@@ -1140,8 +1140,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[684]冗余连接.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com684" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn684" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[684]冗余连接.java" />
               <option name="titleSlug" value="redundant-connection" />
             </LeetcodeEditor>
@@ -1151,8 +1151,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[696]计数二进制子串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com696" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn696" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[696]计数二进制子串.java" />
               <option name="titleSlug" value="count-binary-substrings" />
             </LeetcodeEditor>
@@ -1162,8 +1162,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[697]数组的度.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com697" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn697" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[697]数组的度.java" />
               <option name="titleSlug" value="degree-of-an-array" />
             </LeetcodeEditor>
@@ -1173,8 +1173,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[69]x 的平方根 .md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com69" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn69" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[69]x 的平方根 .java" />
               <option name="titleSlug" value="sqrtx" />
             </LeetcodeEditor>
@@ -1184,8 +1184,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[6]Z 字形变换.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com6" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn6" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[6]Z 字形变换.java" />
               <option name="titleSlug" value="zigzag-conversion" />
             </LeetcodeEditor>
@@ -1195,8 +1195,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[70]爬楼梯.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com70" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn70" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[70]爬楼梯.java" />
               <option name="titleSlug" value="climbing-stairs" />
             </LeetcodeEditor>
@@ -1206,8 +1206,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[714]买卖股票的最佳时机含手续费.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com714" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn714" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[714]买卖股票的最佳时机含手续费.java" />
               <option name="titleSlug" value="best-time-to-buy-and-sell-stock-with-transaction-fee" />
             </LeetcodeEditor>
@@ -1217,8 +1217,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[72]编辑距离.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com72" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn72" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[72]编辑距离.java" />
               <option name="titleSlug" value="edit-distance" />
             </LeetcodeEditor>
@@ -1228,8 +1228,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[73]矩阵置零.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com73" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn73" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[73]矩阵置零.java" />
               <option name="titleSlug" value="set-matrix-zeroes" />
             </LeetcodeEditor>
@@ -1239,10 +1239,32 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[75]颜色分类.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com75" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn75" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[75]颜色分类.java" />
               <option name="titleSlug" value="sort-colors" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[766]托普利茨矩阵.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[766]托普利茨矩阵.md" />
+              <option name="frontendQuestionId" value="leetcode.cn766" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[766]托普利茨矩阵.java" />
+              <option name="titleSlug" value="toeplitz-matrix" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[769]最多能完成排序的块.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[769]最多能完成排序的块.md" />
+              <option name="frontendQuestionId" value="leetcode.cn769" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[769]最多能完成排序的块.java" />
+              <option name="titleSlug" value="max-chunks-to-make-sorted" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1250,8 +1272,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[78]子集.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com78" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn78" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[78]子集.java" />
               <option name="titleSlug" value="subsets" />
             </LeetcodeEditor>
@@ -1261,8 +1283,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[79]单词搜索.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com79" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn79" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[79]单词搜索.java" />
               <option name="titleSlug" value="word-search" />
             </LeetcodeEditor>
@@ -1272,8 +1294,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[7]整数反转.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com7" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn7" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[7]整数反转.java" />
               <option name="titleSlug" value="reverse-integer" />
             </LeetcodeEditor>
@@ -1283,8 +1305,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[88]合并两个有序数组.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com88" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn88" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[88]合并两个有序数组.java" />
               <option name="titleSlug" value="merge-sorted-array" />
             </LeetcodeEditor>
@@ -1294,8 +1316,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[8]字符串转换整数 (atoi).md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com8" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn8" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[8]字符串转换整数 (atoi).java" />
               <option name="titleSlug" value="string-to-integer-atoi" />
             </LeetcodeEditor>
@@ -1305,8 +1327,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[90]子集 II.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com90" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn90" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[90]子集 II.java" />
               <option name="titleSlug" value="subsets-ii" />
             </LeetcodeEditor>
@@ -1316,8 +1338,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[91]解码方法.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com91" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn91" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[91]解码方法.java" />
               <option name="titleSlug" value="decode-ways" />
             </LeetcodeEditor>
@@ -1327,8 +1349,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[94]二叉树的中序遍历.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com94" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn94" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[94]二叉树的中序遍历.java" />
               <option name="titleSlug" value="binary-tree-inorder-traversal" />
             </LeetcodeEditor>
@@ -1338,8 +1360,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[98]验证二叉搜索树.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com98" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn98" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[98]验证二叉搜索树.java" />
               <option name="titleSlug" value="validate-binary-search-tree" />
             </LeetcodeEditor>
@@ -1349,8 +1371,8 @@
           <value>
             <LeetcodeEditor>
               <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[9]回文数.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com9" />
-              <option name="host" value="leetcode-cn.com" />
+              <option name="frontendQuestionId" value="leetcode.cn9" />
+              <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[9]回文数.java" />
               <option name="titleSlug" value="palindrome-number" />
             </LeetcodeEditor>
