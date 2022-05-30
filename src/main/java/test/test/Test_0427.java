@@ -1,10 +1,13 @@
 package test.test;
 
 import java.util.*;
-
+/**
+ * 重点整理的题目：
+ * 334 371 378(图解)
+ */
 public class Test_0427 {
 
-    //324
+    //334
     public boolean increasingTriplet(int[] nums) {
         if (nums.length < 3) {
             return false;
@@ -16,9 +19,9 @@ public class Test_0427 {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] < one) {
                 one = nums[i];
-            } else if (nums[i] < two) {
+            } else if (nums[i] > one && nums[i] < two) {
                 two = nums[i];
-            } else {
+            } else if (nums[i] > two){
                 //找到三个数 one two nums[i]
                 return true;
             }
@@ -26,6 +29,7 @@ public class Test_0427 {
         return false;
     }
 
+    //344
     public void reverseString(char[] s) {
         int i = 0;
         int j = s.length - 1;
@@ -49,23 +53,24 @@ public class Test_0427 {
                 map.put(nums[i], map.get(nums[i]) +1);
             }
         }
-        //key = nums[i]出现的次数, value = nums[i]
-        Map<Integer, Integer> map2 = new HashMap<>();
-        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
-            map2.put(entry.getValue() , entry.getKey());
-        }
-        //创建一个小根堆
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
+
+        //创建一个小根堆 o[0]=当前元素 o[1]=该元素出现的次数
+        PriorityQueue<int[]> queue = new PriorityQueue<int[]>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[1] - o2[1];
+            }
+        });
         //按照出现的次数，创建有k个元素的大根堆
         int cnt = 0;
-        for (Map.Entry<Integer, Integer> entry: map2.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
             if (cnt < k) {
-                queue.add(entry.getKey());
+                queue.add(new int[] {entry.getKey(), map.get(entry.getKey())});
                 cnt ++;
-            } else if (entry.getKey() > queue.peek()){
-                //如果比堆顶元素大
+            } else if (map.get(entry.getKey()) > queue.peek()[1]){
+                //如果出现频次比堆顶元素大
                 queue.poll();
-                queue.add(entry.getKey());
+                queue.add(new int[] {entry.getKey(), map.get(entry.getKey())});
             }
 
         }
@@ -73,8 +78,7 @@ public class Test_0427 {
         int[] res = new int[queue.size()];
         int i = 0;
         while (queue.size()> 0) {
-            Integer c = queue.poll();
-            res[i ++] = map2.get(c);
+            res[i ++] = queue.poll()[0];
         }
         return res;
     }
@@ -187,7 +191,8 @@ public class Test_0427 {
 
     public static void main(String[] args) {
         Test_0427 test_0427 = new Test_0427();
-        //boolean b = test_0427.increasingTriplet(p);
+        int[] p = {4,1,-1,2,-1,2,3};
+        int[] ints = test_0427.topKFrequent(p, 2);
         //char[] s = {'H','a','n','n','a','h'};
         //test_0427.reverseString(s);
         //int[] ints = test_0427.topKFrequent(p, k);
@@ -199,9 +204,7 @@ public class Test_0427 {
 //        };
 //        int k = 8;
 //        int i = test_0427.kthSmallest(m, k);
-        int[] p = {1,2,3};
-        int[] ints = Arrays.copyOf(p, p.length);
-        ints[0] = -1;
+        //int[] ints = Arrays.copyOf(p, p.length);
         System.out.println();
     }
 }
