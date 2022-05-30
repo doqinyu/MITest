@@ -2,54 +2,29 @@ package test.test;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * 重点整理的题目：
+ * 240 179 287 300 322（多个背包问题）
+ */
 public class Test_0426 {
     //240
     public boolean searchMatrix(int[][] matrix, int target) {
         int m = matrix.length;
         int n = matrix[0].length;
         int i = 0;
-        int j = 0;
-        while (i< m && j < n) {
+        int j = n-1;
+        //z 字解法
+        while (i< m && j >= 0) {
             if (matrix[i][j] == target) {
-                return true;
+                return  true;
             }
 
-            if (matrix[i][j] > target) {
-                return false;
-            }
-            //如果到最后一行
-            if (i == m -1) {
-                j = j+1;
-            } else if (j == n-1) {
-                i = i+1;
+            if (target > matrix[i][j]) {
+                i++;
             } else {
-                //如果右方的值 大于 下方的值
-                if (matrix[i][j+1] > matrix[i+1][j]) {
-                    if (matrix[i+1][j] > target) {
-                        return false;
-                    }
-
-                    if (matrix[i][j+1] < target) {
-                        j = j+1;
-                    } else {
-                        i = i +1;
-                    }
-                } else {
-                    //如果下方的值 大于 右方的值
-                    if (matrix[i][j+1] > target) {
-                        return false;
-                    }
-
-                    if (matrix[i+1][j] < target) {
-                        i = i +1;
-                    } else {
-                        j = j +1;
-                    }
-                }
+                j--;
             }
         }
-
         return false;
     }
 
@@ -58,26 +33,15 @@ public class Test_0426 {
         if (s.length() != t.length()) {
             return false;
         }
-        Map<Character, Integer> ms = new HashMap<>();
-        Map<Character, Integer> mt = new HashMap<>();
+        int[] snt = new int[26];
+        int[] tnt = new int[26];
         for (int i = 0; i < s.length(); i++) {
 
-            Integer cnt = ms.get(s.charAt(i));
-            if (cnt == null) {
-                ms.put(s.charAt(i), 1);
-            } else {
-                ms.put(s.charAt(i), cnt + 1);
-            }
-            cnt = mt.get(s.charAt(i));
-            if (cnt == null) {
-                mt.put(s.charAt(i), 1);
-            } else {
-                mt.put(s.charAt(i), cnt + 1);
-            }
+            snt[s.charAt(i) - 'a'] ++;
+            tnt[t.charAt(i) - 'a'] ++;
         }
-
-        for (Map.Entry<Character, Integer> entry: ms.entrySet()) {
-            if (!mt.get(entry.getKey()).equals(entry.getValue())) {
+        for (int i = 0; i< 26; i++) {
+            if (snt[i] != tnt[i]) {
                 return false;
             }
         }
@@ -85,7 +49,7 @@ public class Test_0426 {
     }
 
 
-    //270
+    //279
     public int numSquares(int n) {
         if (n < 4) {
             return n;
@@ -127,17 +91,14 @@ public class Test_0426 {
 
     //287
     public int findDuplicate(int[] nums) {
-        int n  = nums.length;
-        int r1 = 0;
-        int r2 = 0;
-        for (int i = 0; i< n; i++) {
-            r1 = r1 ^ nums[i];
-            if (i != n-1) {
-                r2 = r2 ^ (i + 1);
+        for (int i = 0; i< nums.length; i++) {
+            int n = Math.abs(nums[i]);
+            if (nums[n - 1] < 0) {
+                return n;
             }
+            nums[n - 1] = -nums[n - 1];
         }
-
-        return r1 ^ r2;
+        return -1;
     }
 
     //300
@@ -211,15 +172,16 @@ public class Test_0426 {
                 {18,21,23,26,30}
         };
 
-        int target = 31;
-        int n = 45;
+        int target = 5;
+        int n = 12;
+        //boolean b = test_26.searchMatrix(m, target);
         //int i = test_26.numSquares(n);
-        int[] p = {2};
+        int[] p = {1,3,4,2,2};
         //test_26.moveZeroes(p);
-        //int duplicate = test_26.findDuplicate(p);
+        int duplicate = test_26.findDuplicate(p);
         //int i = test_26.lengthOfLIS(p);
         //int i = test_26.coinChange(p, n);
-        boolean powerOfThree = test_26.isPowerOfThree(n);
+        //boolean powerOfThree = test_26.isPowerOfThree(n);
         System.out.println();
     }
 }
