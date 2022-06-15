@@ -37,6 +37,7 @@ public class Test {
     private static String zpointPage ="http://sandbox-h5.zilivideo.com/h5/zPoints/result";
     private static String videoDetailPrefix = "panipuri://com.funnypuri.client/app/moments/detail?type=4&newsId=%s";
     private static String zpointsIdentity = "&zpointType=zpoints";
+    private static String zpointVideoRankPage = "https://h5.zilivideo.com/h5/zPoints/videoRank?source=share";
 
     private static final String INDIA_ZONE = "Asia/Kolkata";
     private static final String BEIJING_ZONE = "Asia/Shanghai";
@@ -483,18 +484,32 @@ public class Test {
 
     public static void main(String[] args) throws ParseException, UnsupportedEncodingException, InterruptedException {
         //test();
-        LocalDateTime divideTime = LocalDate.now(ZoneId.of(BEIJING_ZONE)).atTime(DIVIDING_TIME_ACTIVITY_RANKING, 0, 0);
-        LocalDateTime now = LocalDateTime.now(ZoneId.of(BEIJING_ZONE));
+//        LocalDateTime divideTime = LocalDate.now(ZoneId.of(BEIJING_ZONE)).atTime(DIVIDING_TIME_ACTIVITY_RANKING, 0, 0);
+//        LocalDateTime now = LocalDateTime.now(ZoneId.of(BEIJING_ZONE));
+//
+//        if (now.isAfter(divideTime)) {
+//            System.out.println("yes");
+//        } else {
+//            System.out.println("no");
+//        }
+//        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        LocalDateTime targetTime = now.minusDays(1);
+//        String format1 = df.format(targetTime);
+//        String format2 = df.format(now);
+        //String s = h5PagePrefix + URLEncoder.encode(zpointVideoRankPage + String.format("?category=%s", "couple"), "UTF-8");
+       Set<String> userSet = new LinkedHashSet<String>();
+        userSet.add("1");
+        userSet.add("2");
+        userSet.add("3");
+        userSet.add("4");
+        userSet.add("1");
+        userSet.add("4");
+        userSet.add("6");
+        userSet.add("7");
+        userSet.add("1");
 
-        if (now.isAfter(divideTime)) {
-            System.out.println("yes");
-        } else {
-            System.out.println("no");
-        }
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDateTime targetTime = now.minusDays(1);
-        String format1 = df.format(targetTime);
-        String format2 = df.format(now);
+        new ArrayList<>(userSet).stream().limit(50).collect(Collectors.toList());
+
         System.out.println();
     }
 

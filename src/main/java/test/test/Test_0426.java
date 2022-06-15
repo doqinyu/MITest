@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 /**
  * 重点整理的题目：
- * 240 179 287 300 322（多个背包问题）
+ * 240 279 287 300 322（多个背包问题）
  */
 public class Test_0426 {
     //240
@@ -89,16 +89,64 @@ public class Test_0426 {
         }
     }
 
-    //287
+    /**
+     * 287 todo test（XXX）
+     * 解法一：二进制法
+     * @param nums
+     * @return
+     */
     public int findDuplicate(int[] nums) {
-        for (int i = 0; i< nums.length; i++) {
-            int n = Math.abs(nums[i]);
-            if (nums[n - 1] < 0) {
-                return n;
-            }
-            nums[n - 1] = -nums[n - 1];
+        int ans = 0;
+        int n = nums.length;
+        int bitMax = 31;
+        //跳过高位的0
+        while (((n-1) >> bitMax) == 0) {
+            bitMax -= 1;
         }
-        return -1;
+        //从第0位开始，统计 x 和 y
+        for (int i = 0; i<= bitMax; i++) {
+            int x = 0;
+            int y = 0;
+            for (int j = 0; j < n; j++) {
+                if ((nums[j] & (1 << i)) != 0) {
+                    x++;
+                }
+
+                if (j >= 1 && (( j & (1 << i))) != 0) {
+                    y++;
+                }
+
+                if (x > y) {
+                    ans |= (1 << i);
+                }
+            }
+        }
+
+        return ans;
+    }
+
+    /**
+     * 287 todo test（XXX）
+     * 解法二：快慢指针法
+     * @param nums
+     * @return
+     */
+    public int findDuplicate2(int[] nums) {
+        int slow = 0;
+        int fast = 0;
+        //先找相遇点
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }
+        //慢指针从0开始，快指针从相遇处开始，再次相遇就是环的入口，即重复的数
+        slow = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+
+        return slow;
     }
 
     //300
@@ -111,7 +159,7 @@ public class Test_0426 {
         for (int i = 1; i < n ;i ++) {
             dp[i] = 1;
             for (int j = i - 1; j >= 0; j--) {
-                //找到离nums[i]最近的且比nums[i]小的
+                //如果比nums[i]小,可以
                 if (nums[j] < nums[i]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }

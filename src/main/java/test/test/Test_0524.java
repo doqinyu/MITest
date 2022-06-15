@@ -1,5 +1,10 @@
 package test.test;
 
+import com.google.protobuf.Enum;
+/**
+ * 重点整理的题目：
+ * 714 766 769
+ */
 public class Test_0524 {
     //714
     public int maxProfit(int[] prices, int fee) {
@@ -16,25 +21,18 @@ public class Test_0524 {
         return Math.max(dp[n-1][0], dp[n-1][1]);
     }
 
-    //766
+
+    /**
+     * 766 根据定义，当且仅当矩阵中每个元素都与其左上角相邻的元素（如果存在）相等时，该矩阵为托普里茨矩阵
+     * @param matrix
+     * @return
+     */
     public boolean isToeplitzMatrix(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
-        //中心对角线下半部判断
-        for (int i = m-2; i>= 0; i--) {
-            int max = Math.min(m-i, n);
-            for (int j = 1; j < max; j++) {
-                if (matrix[i+j][j] != matrix[i][0]) {
-                    return false;
-                }
-            }
-        }
-
-        //中心对角线上半部确认
-        for (int j = n-2; j > 0; j--) {
-            int max = Math.min(m-1, n-j);
-            for (int i = 1; i < max; i++) {
-                if (matrix[0][j] != matrix[i][i + j]) {
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j< n; j++) {
+                if (matrix[i][j] != matrix[i-1][j-1]) {
                     return false;
                 }
             }
@@ -42,17 +40,24 @@ public class Test_0524 {
         return true;
     }
 
-    //769
+    /**
+     * 769
+     * 首先从最左块开始找最小块的大小。
+     * 如果前k个元素为[0...k]，可以直接把他们分为一个块。
+     * 当检查[0..n-1] 中 前 k个元素是不是[0,,,k-1]时，只需要检查其中最大的数是不是k就行了
+     * @param arr
+     * @return
+     */
     public int maxChunksToSorted(int[] arr) {
         int n = arr.length;
         int ans = 0;
+        int max = 0;
         for (int i = 0; i < n; i ++) {
-            //如果数字i在应该在的位置上，无需变更ans
-            if (arr[i] == i) {
-                continue;
+            max = Math.max(max, arr[i]);
+            //前 i 个数的最大数是 i，可以将这 i 个元素分为一个块
+            if (max == i) {
+                ans++;
             }
-
-            ans = Math.max(ans, Math.max(i , arr[i]));
         }
         return ans;
     }

@@ -276,7 +276,7 @@ public class Test_0428 {
     }
 
     /**
-     * todo [重要]5 Manacher 算法求解最长回文子串的长度
+     * todo [重要] Manacher 算法求解最长回文子串的长度
      * @param s
      * @return
      */
@@ -381,10 +381,10 @@ public class Test_0428 {
         Test_0428 test_0428 = new Test_0428();
         String s = "abccccdd";
         //int i = test_0428.longestPalindrome(s);
-        int[] p = {2,2,3,5};
+        int[] p = {1,5,11,5};
         //int i = test_0428.minDistance("a", "b");
-        int abc = test_0428.countSubstrings("abc");
-        //boolean b = test_0428.canPartition3(p);
+        //int abc = test_0428.countSubstrings("abc");
+        boolean b = test_0428.canPartition3(p);
         //boolean b = test_0428.canPartition2(p);
         //boolean b = test_0428.canPartition3(p);
         //List<Integer> duplicates = test_0428.findDuplicates(p);
