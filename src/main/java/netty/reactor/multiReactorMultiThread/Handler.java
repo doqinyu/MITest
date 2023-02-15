@@ -50,9 +50,7 @@ public class Handler implements Runnable {
         realRead();
 
         //业务异步处理
-        executorService.submit(() -> {
-            processBusiness();
-        });
+        executorService.execute(new Processor());
 
         state = PROCESSING;
     }
@@ -106,5 +104,13 @@ public class Handler implements Runnable {
             selectionKey.interestOps(SelectionKey.OP_WRITE);
         }
 
+    }
+
+    class Processor implements Runnable {
+
+        @Override
+        public void run() {
+            processBusiness();
+        }
     }
 }
