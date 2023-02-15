@@ -10,7 +10,7 @@ public class Test_0524 {
     public int maxProfit(int[] prices, int fee) {
         int n = prices.length;
         //dp[i][0]:表示到第i天为止时，不持有股票的最大收益
-        //dp[i][0]:表示到第i天为止时，持有一只股票的最大收益
+        //dp[i][1]:表示到第i天为止时，持有一只股票的最大收益
         int[][]dp = new int[n][2];
         dp[0][0] = 0;
         dp[0][1] = -prices[0];
@@ -62,16 +62,50 @@ public class Test_0524 {
         return ans;
     }
 
+
+    public int numberOfArrays(String s, int k) {
+        final int MOD = 1000000007;
+        int n = s.length();
+        // 为了便于代码编写，我们使用 64 位整数类型
+        long kLong = k;
+        int[] f = new int[n + 1];
+        // 递推的边界条件
+        f[0] = 1;
+        for (int i = 1; i <= n; ++i) {
+            long num = 0, base = 1;
+            // 倒序枚举 j，最多只需要枚举 10 个
+            for (int j = i - 1; j >= 0 && i - j <= 10; --j) {
+                // 在高位添加当前的数字，得到第 j+1 到 i 个数字组成的数
+                // 注意 s 的下标是从 0 开始的
+                num += (s.charAt(j) - '0') * base;
+                if (num > kLong) {
+                    break;
+                }
+                // 判断是否有前导 0
+                if (s.charAt(j) != '0') {
+                    f[i] += f[j];
+                    f[i] %= MOD;
+                }
+                base *= 10;
+            }
+        }
+        return f[n];
+    }
+
+
     public static void main(String[] args) {
         Test_0524 test_0524 = new Test_0524();
-        int[] p ={1,3,7,5,10,3};
-        int fee = 3;
-        int[][] m = {
-                {1,2},
-                {2,2}
-        };
+//        int[] p ={1,3,7,5,10,3};
+//        int fee = 3;
+//        int[][] m = {
+//                {1,2},
+//                {2,2}
+//        };
         //int i = test_0524.maxProfit(p, fee);
-        boolean toeplitzMatrix = test_0524.isToeplitzMatrix(m);
+        //boolean toeplitzMatrix = test_0524.isToeplitzMatrix(m);
+
+        String s = "1317";
+        int k = 2000;
         System.out.println();
 
     }

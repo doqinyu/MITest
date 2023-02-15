@@ -69,6 +69,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[1129]颜色交替的最短路径.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[1129]颜色交替的最短路径.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1129" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1129]颜色交替的最短路径.java" />
+              <option name="titleSlug" value="shortest-path-with-alternating-colors" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[116]填充每个节点的下一个右侧节点指针.java">
           <value>
             <LeetcodeEditor>
@@ -135,6 +146,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[1312]让字符串成为回文串的最少插入次数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[1312]让字符串成为回文串的最少插入次数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1312" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1312]让字符串成为回文串的最少插入次数.java" />
+              <option name="titleSlug" value="minimum-insertion-steps-to-make-a-string-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[135]分发糖果.java">
           <value>
             <LeetcodeEditor>
@@ -154,6 +176,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[136]只出现一次的数字.java" />
               <option name="titleSlug" value="single-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[1373]二叉搜索子树的最大键值和.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[1373]二叉搜索子树的最大键值和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1373" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1373]二叉搜索子树的最大键值和.java" />
+              <option name="titleSlug" value="maximum-sum-bst-in-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -187,6 +220,28 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[141]环形链表.java" />
               <option name="titleSlug" value="linked-list-cycle" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[1482]制作 m 束花所需的最少天数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[1482]制作 m 束花所需的最少天数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1482" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1482]制作 m 束花所需的最少天数.java" />
+              <option name="titleSlug" value="minimum-number-of-days-to-make-m-bouquets" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[1483]树节点的第 K 个祖先.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[1483]树节点的第 K 个祖先.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1483" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1483]树节点的第 K 个祖先.java" />
+              <option name="titleSlug" value="kth-ancestor-of-a-tree-node" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -253,6 +308,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[162]寻找峰值.java" />
               <option name="titleSlug" value="find-peak-element" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[1658]将 x 减到 0 的最小操作数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[1658]将 x 减到 0 的最小操作数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1658" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1658]将 x 减到 0 的最小操作数.java" />
+              <option name="titleSlug" value="minimum-operations-to-reduce-x-to-zero" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -495,6 +561,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[21]合并两个有序链表.java" />
               <option name="titleSlug" value="merge-two-sorted-lists" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[2202]K 次操作后最大化顶端元素.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[2202]K 次操作后最大化顶端元素.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2202" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[2202]K 次操作后最大化顶端元素.java" />
+              <option name="titleSlug" value="maximize-the-topmost-element-after-k-moves" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -839,6 +916,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[382]链表随机节点.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[382]链表随机节点.md" />
+              <option name="frontendQuestionId" value="leetcode.cn382" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[382]链表随机节点.java" />
+              <option name="titleSlug" value="linked-list-random-node" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[384]打乱数组.java">
           <value>
             <LeetcodeEditor>
@@ -990,6 +1078,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[50]Pow(x, n).java" />
               <option name="titleSlug" value="powx-n" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[516]最长回文子序列.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[516]最长回文子序列.md" />
+              <option name="frontendQuestionId" value="leetcode.cn516" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[516]最长回文子序列.java" />
+              <option name="titleSlug" value="longest-palindromic-subsequence" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1301,6 +1400,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[870]优势洗牌.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[870]优势洗牌.md" />
+              <option name="frontendQuestionId" value="leetcode.cn870" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[870]优势洗牌.java" />
+              <option name="titleSlug" value="advantage-shuffle" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[88]合并两个有序数组.java">
           <value>
             <LeetcodeEditor>
@@ -1353,6 +1463,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[94]二叉树的中序遍历.java" />
               <option name="titleSlug" value="binary-tree-inorder-traversal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[987]二叉树的垂序遍历.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[987]二叉树的垂序遍历.md" />
+              <option name="frontendQuestionId" value="leetcode.cn987" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[987]二叉树的垂序遍历.java" />
+              <option name="titleSlug" value="vertical-order-traversal-of-a-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>

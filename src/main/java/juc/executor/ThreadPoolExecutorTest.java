@@ -22,7 +22,27 @@ public class ThreadPoolExecutorTest {
         });
     }
 
-    public static void main(String[] args) {
+    public static void testRetry() {
+        int i = 1;
+        retry:
+        for (int  j = 0;j < 3; j++) {
+            for (int k = 0; k < 3; k++) {
+                if (i == 0) {
+                    System.out.println("i == 0, continue");
+                    continue retry;
+                }
+                if (i == 1) {
+                    System.out.println("i == 1, break");
+                    break retry;
+                }
 
+                System.out.println("kkkkkkkkkkk");
+            }
+            System.out.println("jjjjjjjjjjjj");
+        }
+    }
+
+    public static void main(String[] args) {
+        testRetry();
     }
 }

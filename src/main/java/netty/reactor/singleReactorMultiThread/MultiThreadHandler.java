@@ -50,10 +50,8 @@ public class MultiThreadHandler implements Runnable {
         //读取数据流数据
         realRead();
 
-        executorService.submit(() -> {
-            //异步业务处理
-            processAndHandOff();
-        });
+        //扔给处理器，异步处理业务
+        executorService.execute(new Processor());
 
         state = PROCESSING;
     }
@@ -115,6 +113,14 @@ public class MultiThreadHandler implements Runnable {
 
         } catch (Exception e) {
             System.out.println("readWrite ===> " + e);
+        }
+    }
+
+    class Processor implements Runnable {
+
+        @Override
+        public void run() {
+            processAndHandOff();
         }
     }
 

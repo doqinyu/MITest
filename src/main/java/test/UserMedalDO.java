@@ -3,12 +3,13 @@ package test;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 //表user_medel对应的DO
 @Data
 @NoArgsConstructor
-public class UserMedalDO {
+public class UserMedalDO implements Serializable {
     Long id;
     String userId;
     Integer seriesNo;

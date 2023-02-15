@@ -7,11 +7,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.apache.commons.lang3.StringUtils;
+import utils.ByteUtil;
 import utils.ListUtils;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.net.*;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,6 +30,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Test {
+    private static Calendar calendar = Calendar.getInstance();
 
     private static String DATE_10_30 = "2021-09-22";//2021-10-30 00:00:00
     private static String DATE_10_31 = "2021-09-23";//2021-10-31 00:00:00
@@ -482,7 +484,7 @@ public class Test {
     }
 
 
-    public static void main(String[] args) throws ParseException, UnsupportedEncodingException, InterruptedException {
+    public static void main(String[] args) throws ParseException, UnsupportedEncodingException, InterruptedException, SocketException {
         //test();
 //        LocalDateTime divideTime = LocalDate.now(ZoneId.of(BEIJING_ZONE)).atTime(DIVIDING_TIME_ACTIVITY_RANKING, 0, 0);
 //        LocalDateTime now = LocalDateTime.now(ZoneId.of(BEIJING_ZONE));
@@ -497,22 +499,58 @@ public class Test {
 //        String format1 = df.format(targetTime);
 //        String format2 = df.format(now);
         //String s = h5PagePrefix + URLEncoder.encode(zpointVideoRankPage + String.format("?category=%s", "couple"), "UTF-8");
-       Set<String> userSet = new LinkedHashSet<String>();
-        userSet.add("1");
-        userSet.add("2");
-        userSet.add("3");
-        userSet.add("4");
-        userSet.add("1");
-        userSet.add("4");
-        userSet.add("6");
-        userSet.add("7");
-        userSet.add("1");
+//       Set<String> userSet = new LinkedHashSet<String>();
+//        userSet.add("1");
+//        userSet.add("2");
+//        userSet.add("3");
+//        userSet.add("4");
+//        userSet.add("1");
+//        userSet.add("4");
+//        userSet.add("6");
+//        userSet.add("7");
+//        userSet.add("1");
+//
+//        new ArrayList<>(userSet).stream().limit(50).collect(Collectors.toList());
+        //String s = "aaa";
+        //List<String> ts = Arrays.asList(s.split(","));
 
-        new ArrayList<>(userSet).stream().limit(50).collect(Collectors.toList());
+//        LinkedBlockingQueue queue = new LinkedBlockingQueue(2);
+//        queue.add(1);
+//        queue.add(2);
+//        queue.add(3);
+//        System.out.println();
 
+//        UserMedalDO userMedalDO = new UserMedalDO();
+//        userMedalDO.setUserId("wx");
+//        userMedalDO.setLevel(1);
+//
+//        byte[] bytes = ByteUtil.objectToBytes(userMedalDO);
+//        UserMedalDO userMedalDO1 = ByteUtil.bytesToObject(bytes, UserMedalDO.class);
+//        System.out.println();
+        Date now = new Date();
+        calendar.setTime(now);
+        calendar.add(Calendar.HOUR_OF_DAY, -1);
+        Date oneHourAgo = calendar.getTime();
         System.out.println();
+        //rechargeOrderService.processWaitingRechargeOrder(oneHourAgo, now);
     }
 
+
+    private static InetAddress getFirstNonLoopbackAddress() throws SocketException {
+        Enumeration en = NetworkInterface.getNetworkInterfaces();
+        while (en.hasMoreElements()) {
+            NetworkInterface i = (NetworkInterface) en.nextElement();
+            for (Enumeration en2 = i.getInetAddresses(); en2.hasMoreElements();) {
+                InetAddress addr = (InetAddress) en2.nextElement();
+                if (!addr.isLoopbackAddress()) {
+                    if (addr instanceof Inet4Address) {
+                        return addr;
+                    }
+                }
+            }
+        }
+        return null;
+    }
 
 
 
