@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 相比mybatis-config.xml 不同的地方 -->
+    <properties resource="datasource.properties"></properties>
+
+    <settings>
+        <!-- 设置超时时间，它决定驱动等待一个数据库响应的时间  -->
+        <setting name="defaultStatementTimeout" value="25000"/>
+<!--        <setting name="logImpl" value="SLF4J"/>-->
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 配置懒加载为true。查询时，关闭关联对象即时加载以提高性能-->
+        <setting name="lazyLoadingEnabled" value="true" />
+        <!-- 设置关联对象加载的形态，此处为按需加载（加载字段由SQL指定），不会加载关联表的所有字段，以提高性能 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 配置configurationFactory,用于序列化与反序列化（java原生的序列化与反序列化）时仍然能够触发懒加载操作。由于ConfigurationFactory是静态内部类，所以全路径的最后一个符号是$，而不是. -->
+        <setting name="configurationFactory" value="mybatis.luban.Test.LazyTest$ConfigurationFactory"/>
+        <setting name="lazyLoadTriggerMethods" value=""/>
+        <!-- 开启二级缓存 -->
+<!--        <setting name="cacheEnabled" value="true"/>-->
+        
+        <!-- 修改一级缓存作用域为STATEMENT，一定程度上关闭一级缓存 -->
+<!--        <setting name="localCacheScope" value="STATEMENT"/>-->
+    </settings>
+
+    <typeAliases>
+        <typeAlias alias="blogMap" type="mybatis.luban.model.BlogMap"  />
+        <typeAlias alias="commentMap" type="mybatis.luban.model.CommentMap" />
+    </typeAliases>
+
+
+    <!-- default 默认数数据源 -->
+    <!-- environments配置：可以注册多个数据源DataSource，每个数据源分为两部分：一个是数据源的配置，另外一个是数据库事务配置。 -->
+    <environments default="development">
+        <!-- dataSource 1-->
+        <environment id="development">
+            <transactionManager type="JDBC">
+                <!-- 关闭自动提交 -->
+                <property name="autoCommit" value="false"/>
+            </transactionManager>
+            <!-- POOLED连接池数据库 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${userName}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <mapper resource="mybatis/mapper/VideoMapper.xml"/>
+        <mapper resource="mybatis/mapper/BlogMapper.xml"/>
+        <mapper resource="mybatis/mapper/CommentMapper.xml"/>
+    </mappers>
+</configuration>

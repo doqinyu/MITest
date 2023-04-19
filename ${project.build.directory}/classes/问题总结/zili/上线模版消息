@@ -1,0 +1,55 @@
+上线项目：puri-mt 
+上线内容：排行榜 
+研发：吴霞
+代码审查人：刘政、马超 
+功能测试：李杰、宋艳艳 
+自动化测试：刘冲 
+上线操作人：吴霞 
+是否需要部署灰度环境： 是 
+上线tag：v2.18.0_newRank_tag
+回滚tag：v2.18.1_bubble_tag
+Git MR地址： https://git.n.xiaomi.com/puri/puri-mt/-/merge_requests/99/
+验证方法： 
+1、部署第一台服务器成功后，查看服务器正常running 
+2、查看run.log日志，无异常 
+3、测试验证，我查看服务器日志
+4、验证活动卡片正常展示，关注状态正确
+5、验证h5榜单首页和榜单详情页正常展示
+6、验证h5历史日期和历史详情正常展示
+
+
+上线项目：puri-api 
+上线内容：排行榜
+研发：吴霞 
+代码审查人：刘政 、马超
+功能测试：李杰、宋艳艳 
+自动化测试：刘冲 
+上线操作人：吴霞 
+是否需要部署灰度环境： 是
+上线tag： v2.18.0_newRankFix2_tag 
+回滚tag：v2.18.0_newRank_tag 
+Git M地址： https://git.n.xiaomi.com/puri/puri-api/-/merge_requests/142
+验证方法： 
+1、部署第一台服务器成功后，查看服务器正常running 
+2、查看run.log日志，无异常。 
+3、测试验证，我查看服务器日志。
+4、验证定时任务正常执行，数据插入成功
+
+
+上线项目：puri-cms
+上线内容：排行榜
+研发：吴霞 
+代码审查人：刘政 、马超
+功能测试：
+自动化测试： 
+上线操作人：吴霞 
+是否需要部署灰度环境： 否
+上线tag：v2.18.0_newRank_tag 
+回滚tag：v2.18.1_bubble_tag 
+Git M地址： https://git.n.xiaomi.com/puri/puri-cms/-/merge_requests/158
+验证方法： 
+1、部署第一台服务器成功后，查看服务器正常running 
+2、查看run.log日志，无异常。 
+3、测试验证，我查看服务器日志。
+4、手动执行历史数据，数据插入成功
+

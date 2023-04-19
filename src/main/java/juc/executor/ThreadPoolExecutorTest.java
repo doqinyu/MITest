@@ -35,14 +35,16 @@ public class ThreadPoolExecutorTest {
                     System.out.println("i == 1, break");
                     break retry;
                 }
-
+                //Thread.sleep(1);
                 System.out.println("kkkkkkkkkkk");
             }
             System.out.println("jjjjjjjjjjjj");
         }
     }
 
+
     public static void main(String[] args) {
-        testRetry();
+
+        //testRetry();
     }
 }

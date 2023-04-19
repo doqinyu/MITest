@@ -47,13 +47,31 @@ public class Main {
         o.eat();
     }
 
+//    public static int test() {
+//        int i = 1;
+//        try {
+//            return i;
+//        } finally {
+//            i++;
+//        }
+//    }
+//
+//    public static int test3() {
+//        int i = 2;
+//        try {
+//            return 4;
+//        } finally {
+//            if (i == 2) {
+//                return 0;
+//            }
+//        }
+//    }
+
     public static void main(String[] args) throws Exception {
-        //test1();
-
-
-        //test2();
-        double j = 11.66;
-        int i = (int) j;
-        System.out.println(i);
+//        int val = test();
+//        System.out.println(val);
+//        val = test3();
+//        System.out.println(val);
+        String s = "abc";
     }
 }

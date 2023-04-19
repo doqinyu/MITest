@@ -146,6 +146,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[128]最长连续序列.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[128]最长连续序列.md" />
+              <option name="frontendQuestionId" value="leetcode.cn128" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[128]最长连续序列.java" />
+              <option name="titleSlug" value="longest-consecutive-sequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[1312]让字符串成为回文串的最少插入次数.java">
           <value>
             <LeetcodeEditor>
@@ -154,6 +165,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[1312]让字符串成为回文串的最少插入次数.java" />
               <option name="titleSlug" value="minimum-insertion-steps-to-make-a-string-palindrome" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[131]分割回文串.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[131]分割回文串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn131" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[131]分割回文串.java" />
+              <option name="titleSlug" value="palindrome-partitioning" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -572,6 +594,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[2202]K 次操作后最大化顶端元素.java" />
               <option name="titleSlug" value="maximize-the-topmost-element-after-k-moves" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[224]基本计算器.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[224]基本计算器.md" />
+              <option name="frontendQuestionId" value="leetcode.cn224" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[224]基本计算器.java" />
+              <option name="titleSlug" value="basic-calculator" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1070,6 +1103,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[4]寻找两个正序数组的中位数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[4]寻找两个正序数组的中位数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn4" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[4]寻找两个正序数组的中位数.java" />
+              <option name="titleSlug" value="median-of-two-sorted-arrays" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[50]Pow(x, n).java">
           <value>
             <LeetcodeEditor>
@@ -1100,6 +1144,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[53]最大子数组和.java" />
               <option name="titleSlug" value="maximum-subarray" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[554]砖墙.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[554]砖墙.md" />
+              <option name="frontendQuestionId" value="leetcode.cn554" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[554]砖墙.java" />
+              <option name="titleSlug" value="brick-wall" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1166,6 +1221,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[5]最长回文子串.java" />
               <option name="titleSlug" value="longest-palindromic-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[611]有效三角形的个数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[611]有效三角形的个数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn611" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[611]有效三角形的个数.java" />
+              <option name="titleSlug" value="valid-triangle-number" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1364,6 +1430,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[769]最多能完成排序的块.java" />
               <option name="titleSlug" value="max-chunks-to-make-sorted" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/leetcode/leetcode/editor/cn/[76]最小覆盖子串.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/leetcode/leetcode/editor/cn/doc/content/[76]最小覆盖子串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn76" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/leetcode/leetcode/editor/cn/[76]最小覆盖子串.java" />
+              <option name="titleSlug" value="minimum-window-substring" />
             </LeetcodeEditor>
           </value>
         </entry>
